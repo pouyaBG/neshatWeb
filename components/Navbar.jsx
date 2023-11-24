@@ -3,15 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import LoginForm from "./LoginForm";
 import { useEffect } from "react";
 import axios from "axios";
+import { Avatar } from "@nextui-org/react";
 
 const Navbar = () => {
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(true);
+  const [data, setData] = useState(null);
   useEffect(() => {
     const authToken = localStorage.getItem("mainToken");
-    axios.post().then(() => {});
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`,
+    };
+
+    axios
+      .get("https://django-sport.iran.liara.run/api/secure/refreshjwt/", {
+        headers: headers,
+      })
+      .then((response) => setData(response.data.data))
+      .catch((error) => console.log(error));
   }, []);
   const handleToggleForm = () => {
     setIsLoginFormVisible((prevValue) => !prevValue);
@@ -74,6 +85,7 @@ const Navbar = () => {
               <circle cx="18.5" cy="4.5" r="3.5" fill="#DED60E" />
             </svg>
           </div>
+
           <button className="bg-[#DED60E] rounded-[7px] flex gap-1 items-center  text-black p-[10px]">
             <svg
               className="mt-1"
@@ -282,25 +294,39 @@ const Navbar = () => {
               <circle cx="18.5" cy="4.5" r="3.5" fill="#DED60E" />
             </svg>
           </div>
-          <Link
-            href={"/users/login"}
-            className="bg-[#DED60E] rounded-[7px] flex gap-1 items-center  text-black p-[10px]"
-          >
-            <svg
-              className="mt-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 14 14"
-              fill="none"
-            >
-              <path
-                d="M1.45706 13.8132C1.45706 13.8132 0.382812 13.8132 0.382812 12.6793C0.382812 11.5453 1.45706 8.14355 6.8283 8.14355C12.1995 8.14355 13.2738 11.5453 13.2738 12.6793C13.2738 13.8132 12.1995 13.8132 12.1995 13.8132H1.45706ZM6.8283 7.00963C7.68303 7.00963 8.50274 6.65122 9.10713 6.01327C9.71151 5.37531 10.051 4.51005 10.051 3.60784C10.051 2.70563 9.71151 1.84037 9.10713 1.20241C8.50274 0.564456 7.68303 0.206055 6.8283 0.206055C5.97358 0.206055 5.15386 0.564456 4.54948 1.20241C3.9451 1.84037 3.60556 2.70563 3.60556 3.60784C3.60556 4.51005 3.9451 5.37531 4.54948 6.01327C5.15386 6.65122 5.97358 7.00963 6.8283 7.00963Z"
-                fill="#101010"
-              />
-            </svg>
-            <p className="font-thin">ورود / ثبت نام </p>
-          </Link>
+          {data ? (
+            <div className="flex items-center gap-5">
+              <div className="z-10 bg-white rounded-full p-2">
+                <p className="px-2 text-black">{data.username[0]}</p>
+              </div>
+              <div className="flex flex-col items-start justify-center">
+                <p>{data.username}</p>
+                <p>{data.email}</p>
+              </div>
+            </div>
+          ) : (
+            <>
+              <Link
+                href={"/users/login"}
+                className="bg-[#DED60E] rounded-[7px] flex gap-1 items-center  text-black p-[10px]"
+              >
+                <svg
+                  className="mt-1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                >
+                  <path
+                    d="M1.45706 13.8132C1.45706 13.8132 0.382812 13.8132 0.382812 12.6793C0.382812 11.5453 1.45706 8.14355 6.8283 8.14355C12.1995 8.14355 13.2738 11.5453 13.2738 12.6793C13.2738 13.8132 12.1995 13.8132 12.1995 13.8132H1.45706ZM6.8283 7.00963C7.68303 7.00963 8.50274 6.65122 9.10713 6.01327C9.71151 5.37531 10.051 4.51005 10.051 3.60784C10.051 2.70563 9.71151 1.84037 9.10713 1.20241C8.50274 0.564456 7.68303 0.206055 6.8283 0.206055C5.97358 0.206055 5.15386 0.564456 4.54948 1.20241C3.9451 1.84037 3.60556 2.70563 3.60556 3.60784C3.60556 4.51005 3.9451 5.37531 4.54948 6.01327C5.15386 6.65122 5.97358 7.00963 6.8283 7.00963Z"
+                    fill="#101010"
+                  />
+                </svg>
+                <p className="font-thin">ورود / ثبت نام </p>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>

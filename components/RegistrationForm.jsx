@@ -27,6 +27,7 @@ const RegistrationForm = () => {
       );
       localStorage.setItem("mainToken", response.data.token.access);
       router.push("/");
+      alert("کاربر ثبت نام شد")
     } catch (error) {
       if (error.response) {
         console.log(

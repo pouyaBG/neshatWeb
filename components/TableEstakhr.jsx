@@ -147,7 +147,7 @@ const TableEstakhr = () => {
                 </>
               )}
               <div
-                className={` px-20 py-[19px] rounded-[8.754px] ${
+                className={`cursor-pointer px-20 py-[19px] rounded-[8.754px] ${
                   item.buy ? "bg-[#9D9D9D]" : "bg-[#59AC49]"
                 }`}
               >

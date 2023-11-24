@@ -5,12 +5,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 
 const Page = () => {
-  useEffect(() => {
-    Aos.init({
-      duration: 500,
-      once: false,
-    });
-  }, []);
+ 
   return (
     <div className="flex items-center w-full h-screen" data-aos="zoom-in-down">
       <div className="w-[40%] h-full relative">
