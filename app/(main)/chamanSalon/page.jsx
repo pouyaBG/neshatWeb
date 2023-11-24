@@ -6,6 +6,7 @@ import SwiperSlides from "@/components/SwiperSlide";
 import Link from "next/link";
 import React, { useState } from "react";
 
+
 const Chaman = () => {
   const [currentPage, setCurrentPage] = useState("chaman");
   const [commentPage, setCommentPage] = useState("comment");
