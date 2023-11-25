@@ -22,6 +22,12 @@ const Estakhr = () => {
       bool: false,
     },
   ];
+  const listMorabi = [
+    { svg: "/svg/mor1.png", name: "آرش ساغری", work: "ماساژور" },
+    { svg: "/svg/mor2.png", name: "شایان نجفی", work: "مربی شنا" },
+    { svg: "/svg/mor3.png", name: "سحر حسینی", work: "ماساژور" },
+    { svg: "/svg/mor4.png", name: "مهسا اسماعیلی", work: "مربی شنا" },
+  ];
   const [commentPage, setCommentPage] = useState("comment");
   return (
     <div className="flex flex-col items-center m-auto w-full justify-center container yekanBakh ">
@@ -29,7 +35,9 @@ const Estakhr = () => {
         <SwiperSlidesTwo />
       </section>
       <div className="mt-6">
-        <p className="text-[#1D1D1D] text-[28px] not-italic font-bold leading-[normal]">رزرو بلیط استخر و ماساژ</p>
+        <p className="text-[#1D1D1D] text-[28px] not-italic font-bold leading-[normal]">
+          رزرو بلیط استخر و ماساژ
+        </p>
       </div>
       <div className="w-[88%] mx-auto mt-10 transition-all">
         {accordionItems.map((item, index) => (
@@ -81,10 +89,11 @@ const Estakhr = () => {
           </div>
         ))}
       </div>
+
       <section className="my-5 bg-white w-[79%] rounded-[15px]">
         <div className="p-5">
           <h1>
-            <li className="text-black text-xl not-italic font-medium leading-[normal]">
+            <li className="text-black text-[18px] mb-5 not-italic font-medium leading-[normal]">
               شرایط و مقررات استفاده از سالن استخر
             </li>
             <p className="text-black text-base not-italic font-thin my-1 leading-[normal]">
@@ -110,6 +119,36 @@ const Estakhr = () => {
           </h1>
         </div>
       </section>
+      <div className="mb-20">
+        <div className="w-full m-auto flex items-center justify-center">
+          <p className="border-b border-black py-5 w-fit my-5 text-center">
+            مربیان
+          </p>
+        </div>
+        <div className="w-full flex items-center justify-between gap-5">
+          {listMorabi.map((item, id) => (
+            <div
+              key={id}
+              className="border border-black rounded-[14.484px] flex overflow-hidden relative group cursor-pointer"
+            >
+              <img
+                src={item.svg}
+                className="w-1/2 group-hover:w-full transition-all"
+              />
+              <img
+                src="/svg/cover4.png"
+                className=" transition-all absolute -z-10 group-hover:z-0 left-0 bottom-0 "
+              />
+              <div className="absolute left-2 top-28 group-hover:hidden">
+                <p className="text-[#FFF] text-[20px]">{item.name}</p>
+              </div>
+              <div className="absolute left-10 bottom-10 opacity-0 group-hover:opacity-100">
+                <p className="text-[#DED60E] text-[25px] ">{item.work}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <section className="w-full flex flex-col justify-center items-center mb-20">
         <div className="flex justify-between items-center lg:gap-10 mt-5 lg:mt-0 gap-5 lg:px-36 lg:py-3 py-1 px-10 bg-white mb-32  border shadow-[10px_30px_50px_0px_rgba(0,0,0,0.05),0px_-4px_11px_-4px_rgba(0,0,0,0.12)] rounded-[50px] border-solid border-[#D6D6D6] ">
           <button
