@@ -31,7 +31,7 @@ const Estakhr = () => {
       <div className="mt-6">
         <p className="text-[#1D1D1D] text-[28px] not-italic font-bold leading-[normal]">رزرو بلیط استخر و ماساژ</p>
       </div>
-      <div className="w-[90%] mx-auto mt-10 transition-all">
+      <div className="w-[88%] mx-auto mt-10 transition-all">
         {accordionItems.map((item, index) => (
           <div
             key={index}
