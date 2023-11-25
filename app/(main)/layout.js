@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "../globals.css"
+import "../globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 export const metadata = {
@@ -10,6 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="rtl">
       <body className={"container_main bg-[#F4F4F4]"}>
+       
         <Navbar />
         {children}
         <div className="w-full flex flex-col items-center justify-center">
