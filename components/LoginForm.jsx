@@ -26,20 +26,8 @@ const LoginForm = () => {
         "https://django-sport.iran.liara.run/api/secure/Login/",
         values
       );
-      // toast.success("با موفقیت وارد شدید", {
-      //   position: "top-right",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      // });
-      localStorage.setItem("mainToken", response.data.token.access);
-      console.log("Server response:", response.data);
-    } catch (error) {
-      toast.error("اشتباهی رخ داده است", {
+      console.log(response.data);
+      toast.success("با موفقیت وارد شدید", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -49,7 +37,21 @@ const LoginForm = () => {
         progress: undefined,
         theme: "light",
       });
-      console.error("Error submitting form:", error);
+      router.push("/")
+      localStorage.setItem("mainToken", response.data.access);
+      console.log("Server response:", response.data.access);
+    } catch (error) {
+      toast.error("نام کاربری یا رمز عبور وارد شده نادرست است!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      console.error(error);
     } finally {
       setIsSubmitting(false);
     }
