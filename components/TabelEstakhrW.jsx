@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TabelEstakhrW = () => {
   const ListItem = [
@@ -48,6 +48,11 @@ const TabelEstakhrW = () => {
       buy: false,
     },
   ];
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
   return (
     <section className="w-full rounded-[15px] ">
       <div className="flex flex-col items-center  ">
@@ -67,27 +72,34 @@ const TabelEstakhrW = () => {
               </div>
               <div className=" py-2 rounded-[8.754px] flex items-center justify-center border ">
                 <div className="border-l px-10 flex flex-col items-center justify-center">
-                  <p>شروع</p>
+                  <p className="font-thin">شروع</p>
                   <p>{item.start}</p>
                 </div>
                 <div className=" px-10 flex flex-col items-center justify-center">
-                  <p>پایان</p>
+                  <p className="font-thin">پایان</p>
                   <p>{item.end}</p>
                 </div>
               </div>
               {item.buy ? (
-                <div className="border px-[162px] rounded-[8.754px] py-[19px]">
+                <div className="border px-[175px] rounded-[8.754px] py-[19px]">
                   <p>ظـــرفــیـــت تــکــمــیــل</p>
                 </div>
               ) : (
                 <>
                   <div className=" py-2 rounded-[8.754px] flex items-center justify-center border ">
                     <div className="border-l px-10 flex flex-col items-center justify-center">
-                      <p>قیمت (هر نفر)</p>
+                      <p className="font-thin">قیمت (هر نفر)</p>
                       <p>{item.price1} ریال</p>
                     </div>
                     <div className=" px-10 flex flex-col items-center justify-center">
-                      <p>به همراه ماساژ</p>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={handleCheckboxChange}
+                        />
+                        <p className="font-thin">به همراه ماساژ</p>
+                      </div>
                       <p>{item.price2} ریال</p>
                     </div>
                   </div>
