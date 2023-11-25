@@ -1,94 +1,51 @@
 import React from "react";
 
-const TableEstakhr = () => {
+const TabelEstakhrW = () => {
   const ListItem = [
     {
-      day: "شنبه",
-      date: "9 آبان",
-      man: true,
+      day: "یکشنبه",
+      date: "10 آبان",
+      man: false,
       start: "10:00",
       end: "22:00",
       price1: "700.000",
       price2: "1.200.000",
       quntitiy: "150",
-      buy: false,
+      buy: true,
     },
-    // {
-    //   day: "یکشنبه",
-    //   date: "10 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "22:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "150",
-    //   buy: true,
-    // },
+
     {
-      day: "دوشنبه",
+      day: "سه شنبه",
       date: "11 آبان",
-      man: true,
+      man: false,
       start: "10:00",
       end: "16:00",
       price1: "700.000",
       price2: "1.200.000",
       quntitiy: "150",
-      buy: false,
+      buy: true,
     },
-    // {
-    //   day: "سه شنبه",
-    //   date: "11 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "16:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "150",
-    //   buy: true,
-    // },
     {
-      day: "چهارشنبه",
-      date: "12 آبان",
-      man: true,
+      day: "پنجشنبه",
+      date: "13 آبان",
+      man: false,
       start: "10:00",
       end: "22:00",
-      price1: "700.000",
-      price2: "1.200.000",
-      quntitiy: "10",
-      buy: false,
-    },
-    // {
-    //   day: "پنجشنبه",
-    //   date: "13 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "22:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "10",
-    //   buy: true,
-    // },
-    // {
-    //   day: "جمعه",
-    //   date: "14 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "16:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "10",
-    //   buy: false,
-    // },
-    {
-      day: "جمعه",
-      date: "14 آبان",
-      man: true,
-      start: "10:00",
-      end: "16:00",
       price1: "700.000",
       price2: "1.200.000",
       quntitiy: "10",
       buy: true,
+    },
+    {
+      day: "جمعه",
+      date: "14 آبان",
+      man: false,
+      start: "10:00",
+      end: "16:00",
+      price1: "700.000",
+      price2: "1.200.000",
+      quntitiy: "10",
+      buy: false,
     },
   ];
   return (
@@ -155,4 +112,4 @@ const TableEstakhr = () => {
   );
 };
 
-export default TableEstakhr;
+export default TabelEstakhrW;

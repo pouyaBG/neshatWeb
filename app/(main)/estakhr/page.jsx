@@ -1,23 +1,92 @@
 "use client";
-import Bchaman from "@/components/Bchaman";
 import Bsalon from "@/components/Bsalon";
 import Comment from "@/components/Comment";
 import SwiperSlidesTwo from "@/components/SwiperSlidesTwo";
+import TabelEstakhrW from "@/components/TabelEstakhrW";
 import TableEstakhr from "@/components/TableEstakhr";
 import React, { useState } from "react";
 
 const Estakhr = () => {
+  const [openIndex, setOpenIndex] = useState(0);
+
+  const handleToggle = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? -1 : index));
+  };
+
+  const accordionItems = [
+    { title: "سانس آقایان", svg: "/svg/man.svg", color: "00A1FF", bool: true },
+    {
+      title: "سانس بانوان",
+      svg: "/svg/woman.svg",
+      color: "FF089A",
+      bool: false,
+    },
+  ];
   const [commentPage, setCommentPage] = useState("comment");
   return (
     <div className="flex flex-col items-center m-auto w-full justify-center container yekanBakh ">
       <section className="relative w-full">
         <SwiperSlidesTwo />
       </section>
-      <TableEstakhr />
+      <div className="mt-6">
+        <p className="text-[#1D1D1D] text-[28px] not-italic font-bold leading-[normal]">رزرو بلیط استخر و ماساژ</p>
+      </div>
+      <div className="w-[90%] mx-auto mt-10 transition-all">
+        {accordionItems.map((item, index) => (
+          <div
+            key={index}
+            className="border rounded-md overflow-hidden mb-2 w-[90%] m-auto transition-all"
+          >
+            <button
+              onClick={() => handleToggle(index)}
+              className="w-full p-4 flex justify-between items-center focus:outline-none bg-white border-[1px solid rgba(0, 0, 0, 0.30);
+
+              ] relative"
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className={`bg-[#${item.color}] rounded-[10px] flex justify-center items-center py-2`}
+                >
+                  <img src={item.svg} className="" />
+                </div>
+                {item.title}
+              </div>
+              <span className="bg-[#F0F0F0] rounded-[15px] py-3 px-3">
+                <svg
+                  className={`${
+                    openIndex === index ? "rotate-180" : ""
+                  } transition-all`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="12"
+                  viewBox="0 0 22 12"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.7"
+                    d="M20 10.1892L11.5845 1.7739C11.1563 1.34573 10.4627 1.34365 10.032 1.76924L1.51 10.1892"
+                    stroke="#202020"
+                    stroke-width="2.59872"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </button>
+            {/* Content (Initially Hidden) */}
+            {openIndex === index && (
+              <div className="p-4 bg-white border-t w-full">
+                {item.bool ? <TableEstakhr /> : <TabelEstakhrW />}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
       <section className="my-5 bg-white w-[79%] rounded-[15px]">
         <div className="p-5">
           <h1>
-            <li className="text-black text-xl not-italic font-medium leading-[normal]">شرایط و مقررات استفاده از سالن استخر</li>
+            <li className="text-black text-xl not-italic font-medium leading-[normal]">
+              شرایط و مقررات استفاده از سالن استخر
+            </li>
             <p className="text-black text-base not-italic font-thin my-1 leading-[normal]">
               1. استفاده از استخر برای شنا و سرگرمی تنها مجاز است و استفاده از
               آن به عنوان محل شستشو یا شست و شوی لباس ممنوع است.
