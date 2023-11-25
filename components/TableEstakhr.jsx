@@ -1,4 +1,7 @@
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TableEstakhr = () => {
   const ListItem = [
@@ -13,17 +16,6 @@ const TableEstakhr = () => {
       quntitiy: "150",
       buy: false,
     },
-    // {
-    //   day: "یکشنبه",
-    //   date: "10 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "22:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "150",
-    //   buy: true,
-    // },
     {
       day: "دوشنبه",
       date: "11 آبان",
@@ -35,17 +27,6 @@ const TableEstakhr = () => {
       quntitiy: "150",
       buy: false,
     },
-    // {
-    //   day: "سه شنبه",
-    //   date: "11 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "16:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "150",
-    //   buy: true,
-    // },
     {
       day: "چهارشنبه",
       date: "12 آبان",
@@ -57,28 +38,6 @@ const TableEstakhr = () => {
       quntitiy: "10",
       buy: false,
     },
-    // {
-    //   day: "پنجشنبه",
-    //   date: "13 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "22:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "10",
-    //   buy: true,
-    // },
-    // {
-    //   day: "جمعه",
-    //   date: "14 آبان",
-    //   man: false,
-    //   start: "10:00",
-    //   end: "16:00",
-    //   price1: "700.000",
-    //   price2: "1.200.000",
-    //   quntitiy: "10",
-    //   buy: false,
-    // },
     {
       day: "جمعه",
       date: "14 آبان",
@@ -91,19 +50,49 @@ const TableEstakhr = () => {
       buy: true,
     },
   ];
-  const [isChecked, setIsChecked] = useState(false);
 
-  // Handler function to toggle the checkbox state
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+  const router = useRouter();
+
+  const [checkboxStates, setCheckboxStates] = useState(
+    ListItem.map(() => false)
+  );
+
+  const handleCheckboxChange = (index) => {
+    const newCheckboxStates = [...checkboxStates];
+    newCheckboxStates[index] = !newCheckboxStates[index];
+    setCheckboxStates(newCheckboxStates);
   };
+
+  const handleBuyClick = (index) => {
+    const authToken = localStorage.getItem("mainToken");
+
+    if (!authToken) {
+      toast.info("ابتدا وارد شوید", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      router.push("/users/singup");
+      console.log("کاربر وارد نشده است. لاگین کنید.");
+    } else {
+      // Handle the purchase logic here based on the index
+      console.log("Index:", index);
+      console.log("Purchase logic for item:", ListItem[index]);
+    }
+  };
+
   return (
     <section className="w-full rounded-[15px] ">
       <div className="flex flex-col items-center  ">
         <div className="w-full mt-5 flex flex-col items-center justify-center gap-5 mb-5  bg-white">
-          {ListItem?.map((item, id) => (
+          {ListItem?.map((item, index) => (
             <div
-              key={id}
+              key={index}
               className="w-full flex justify-center gap-5 items-center gap-y-5"
             >
               <div
@@ -139,8 +128,8 @@ const TableEstakhr = () => {
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={isChecked}
-                          onChange={handleCheckboxChange}
+                          checked={checkboxStates[index]}
+                          onChange={() => handleCheckboxChange(index)}
                         />
                         <p className="font-thin">به همراه ماساژ</p>
                       </div>
@@ -157,6 +146,7 @@ const TableEstakhr = () => {
                 className={`cursor-pointer px-20 py-[19px] rounded-[8.754px] ${
                   item.buy ? "bg-[#9D9D9D]" : "bg-[#59AC49]"
                 }`}
+                onClick={() => handleBuyClick(index)}
               >
                 <button className="text-white">خرید</button>
               </div>

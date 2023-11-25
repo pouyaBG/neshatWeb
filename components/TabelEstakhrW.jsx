@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const TabelEstakhrW = () => {
@@ -48,18 +49,45 @@ const TabelEstakhrW = () => {
       buy: false,
     },
   ];
-  const [isChecked, setIsChecked] = useState(false);
+  const router = useRouter();
+  const [checkboxStates, setCheckboxStates] = useState(
+    ListItem.map(() => false)
+  );
 
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+  const handleCheckboxChange = (index) => {
+    const newCheckboxStates = [...checkboxStates];
+    newCheckboxStates[index] = !newCheckboxStates[index];
+    setCheckboxStates(newCheckboxStates);
+  };
+  const handleBuyClick = (index) => {
+    const authToken = localStorage.getItem("mainToken");
+
+    if (!authToken) {
+      toast.info("ابتدا وارد شوید", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      router.push("/users/singup");
+      console.log("کاربر وارد نشده است. لاگین کنید.");
+    } else {
+      // Handle the purchase logic here based on the index
+      console.log("Index:", index);
+      console.log("Purchase logic for item:", ListItem[index]);
+    }
   };
   return (
     <section className="w-full rounded-[15px] ">
       <div className="flex flex-col items-center  ">
         <div className="w-full mt-5 flex flex-col items-center justify-center gap-5 mb-5  bg-white">
-          {ListItem?.map((item, id) => (
+          {ListItem?.map((item, index) => (
             <div
-              key={id}
+              key={index}
               className="w-full flex justify-center gap-5 items-center gap-y-5"
             >
               <div
@@ -95,8 +123,8 @@ const TabelEstakhrW = () => {
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={isChecked}
-                          onChange={handleCheckboxChange}
+                          checked={checkboxStates[index]}
+                          onChange={() => handleCheckboxChange(index)}
                         />
                         <p className="font-thin">به همراه ماساژ</p>
                       </div>
@@ -104,7 +132,7 @@ const TabelEstakhrW = () => {
                     </div>
                   </div>
                   <div className=" px-4 py-2 rounded-[8.754px] border flex items-center flex-col justify-between ">
-                    <p>ظرفیت</p>
+                    <p className="font-thin">ظرفیت</p>
                     <p>{item.quntitiy}</p>
                   </div>
                 </>
@@ -113,6 +141,7 @@ const TabelEstakhrW = () => {
                 className={`cursor-pointer px-20 py-[19px] rounded-[8.754px] ${
                   item.buy ? "bg-[#9D9D9D]" : "bg-[#59AC49]"
                 }`}
+                onClick={() => handleBuyClick(index)}
               >
                 <button className="text-white">خرید</button>
               </div>

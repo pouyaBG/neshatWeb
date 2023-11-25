@@ -39,7 +39,7 @@ const Estakhr = () => {
           رزرو بلیط استخر و ماساژ
         </p>
       </div>
-      <div className="w-[88%] mx-auto mt-10 transition-all">
+      <div className="w-[85%] mx-auto mt-10 transition-all">
         {accordionItems.map((item, index) => (
           <div
             key={index}
@@ -62,7 +62,7 @@ const Estakhr = () => {
               <span className="bg-[#F0F0F0] rounded-[15px] py-3 px-3">
                 <svg
                   className={`${
-                    openIndex === index ? "rotate-180" : ""
+                    openIndex === index ? "rotate-0" : "rotate-180"
                   } transition-all`}
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"
@@ -90,7 +90,7 @@ const Estakhr = () => {
         ))}
       </div>
 
-      <section className="my-5 bg-white w-[79%] rounded-[15px]">
+      <section className="my-5 bg-white w-[76%] rounded-[9px]">
         <div className="p-5">
           <h1>
             <li className="text-black text-[18px] mb-5 not-italic font-medium leading-[normal]">
@@ -121,7 +121,7 @@ const Estakhr = () => {
       </section>
       <div className="mb-20">
         <div className="w-full m-auto flex items-center justify-center">
-          <p className="border-b border-black py-5 w-fit my-5 text-center">
+          <p className="border-b border-black py-1 w-fit my-7  text-center text-[20px]">
             مربیان
           </p>
         </div>
