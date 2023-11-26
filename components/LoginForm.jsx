@@ -5,6 +5,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -126,6 +127,11 @@ const LoginForm = () => {
               "ورود"
             )}
           </button>
+        </div>
+        <div className="w-full flex items-end justify-end">
+          <Link href={"/"} className="border px-5 py-2 w-fit rounded-[15px]">
+            برگشت
+          </Link>
         </div>
       </Form>
     </Formik>

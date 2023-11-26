@@ -52,7 +52,7 @@ const Estakhr = () => {
           >
             <button
               onClick={() => handleToggle(index)}
-              className="w-full p-4 flex justify-between items-center focus:outline-none bg-white border-[1px solid rgba(0, 0, 0, 0.30);
+              className="w-full p-2 flex justify-between items-center focus:outline-none bg-white border-[1px solid rgba(0, 0, 0, 0.30);
 
               ] relative"
             >
@@ -93,7 +93,7 @@ const Estakhr = () => {
         ))}
       </div>
 
-      <section className="my-5 bg-white w-[76%] rounded-[9px]">
+      <section className="my-5 bg-white w-[76%] rounded-[8px]">
         <div className="p-5">
           <h1>
             <li className="text-black text-[18px] mb-5 not-italic font-medium leading-[normal]">

@@ -19,17 +19,17 @@ const Page = () => {
         </h1>
         <RegistrationForm />
       </div>
-      <div className="w-[40%] h-full relative">
+      <div className="w-[40%] h-full relative ">
         <img
           src="/svg/coverL.png"
           className="w-full h-full object-cover left-0 bottom-0 absolute"
         />
         <img src="/svg/logS.png" className="w-full h-full object-cover" />
-        <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 flex flex-col items-center justify-center">
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
           <h2 className="text-white text-[28.042px] not-italic font-medium leading-[normal] my-2">
             آیا قبلا ثبت نام کرده اید؟
           </h2>
-          <h2 className="text-[#DEDEDE] text-[23.83px] not-italic font-medium leading-[normal] my-2">
+          <h2 className="text-[#DEDEDE] text-[23.83px] not-italic font-thin leading-[normal] my-2">
             وارد حساب کاربری خود شوید
           </h2>
           <Link

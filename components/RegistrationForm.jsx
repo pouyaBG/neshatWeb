@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const RegistrationForm = () => {
   const router = useRouter();
@@ -172,6 +173,8 @@ const RegistrationForm = () => {
             )}
           </button>
         </div>
+        <Link href={"/"} className="border px-5 py-2 w-fit rounded-[15px]">برگشت</Link>
+
       </Form>
     </Formik>
   );

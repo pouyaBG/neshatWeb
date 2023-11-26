@@ -96,8 +96,8 @@ const TableEstakhr = () => {
               className="w-full flex justify-center gap-5 items-center gap-y-5"
             >
               <div
-                className={` w-[104.055px] flex flex-col items-center justify-center ${
-                  item.man ? "bg-[#93D7FF]" : "bg-[#FFA0D8]"
+                className={` w-[104.055px] flex flex-col items-center justify-center text-[#FFFFFF] ${
+                  item.man ? "bg-[#00A1FF]" : "bg-[#FF089A]"
                 } px-4 py-2 rounded-[8.754px]`}
               >
                 <p>{item.day}</p>
