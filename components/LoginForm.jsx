@@ -37,9 +37,8 @@ const LoginForm = () => {
         progress: undefined,
         theme: "light",
       });
-      router.push("/")
+      router.push("/");
       localStorage.setItem("mainToken", response.data.access);
-      console.log("Server response:", response.data.access);
     } catch (error) {
       toast.error("نام کاربری یا رمز عبور وارد شده نادرست است!", {
         position: "top-right",

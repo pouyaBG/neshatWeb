@@ -21,11 +21,6 @@ const RegistrationForm = () => {
     username: "",
     password: "",
   };
-
-  const validationSchema = Yup.object().shape({
-   
-  });
-
   const handleSubmit = async (values) => {
     setIsSubmitting(true);
     console.log(values);
@@ -95,10 +90,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-    >
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <Form>
         <div className="w-full h-full flex justify-between flex-col items-center gap-2 p-10">
           <label className="flex flex-col">

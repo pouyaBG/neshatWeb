@@ -14,10 +14,15 @@ const Estakhr = () => {
   };
 
   const accordionItems = [
-    { title: "سانس آقایان", svg: "/svg/man.svg", color: "00A1FF", bool: true },
+    {
+      title: "سانس آقایان",
+      svg: "/svg/icoman.png",
+      color: "00A1FF",
+      bool: true,
+    },
     {
       title: "سانس بانوان",
-      svg: "/svg/woman.svg",
+      svg: "/svg/icowomen.png",
       color: "FF089A",
       bool: false,
     },
@@ -52,9 +57,7 @@ const Estakhr = () => {
               ] relative"
             >
               <div className="flex items-center gap-2">
-                <div
-                  className={`bg-[#${item.color}] rounded-[10px] flex justify-center items-center py-2`}
-                >
+                <div>
                   <img src={item.svg} className="" />
                 </div>
                 {item.title}
