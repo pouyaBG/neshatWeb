@@ -39,7 +39,6 @@ const SwiperSlideShop = () => {
       className="relative"
       spaceBetween={20}
       slidesPerView={1}
-      scrollbar={{ draggable: true }}
     >
       <button
         onClick={nextSlide}
