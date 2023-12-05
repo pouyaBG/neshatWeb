@@ -158,10 +158,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact">
+              <Link href="/shop">
                 <p
                   className={`font-thin  hover:scale-105 transition-all  ${
-                    pathname === "/about" ? "active font-medium" : ""
+                    pathname === "/shop" ? "active font-medium" : ""
                   }`}
                 >
                   فروشگاه
@@ -233,10 +233,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact">
+              <Link href="/shop">
                 <p
                   className={`font-thin  hover:scale-105 transition-all  ${
-                    pathname === "/about" ? "active font-medium" : ""
+                    pathname === "/shop" ? "active font-medium" : ""
                   }`}
                 >
                   فروشگاه
