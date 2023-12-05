@@ -1,60 +1,73 @@
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const TableEstakhr = () => {
-  const ListItem = [
-    {
-      day: "شنبه",
-      date: "9 آبان",
-      man: true,
-      start: "10:00",
-      end: "22:00",
-      price1: "700.000",
-      price2: "1.200.000",
-      quntitiy: "150",
-      buy: false,
-    },
-    {
-      day: "دوشنبه",
-      date: "11 آبان",
-      man: true,
-      start: "10:00",
-      end: "16:00",
-      price1: "700.000",
-      price2: "1.200.000",
-      quntitiy: "150",
-      buy: false,
-    },
-    {
-      day: "چهارشنبه",
-      date: "12 آبان",
-      man: true,
-      start: "10:00",
-      end: "22:00",
-      price1: "700.000",
-      price2: "1.200.000",
-      quntitiy: "10",
-      buy: false,
-    },
-    {
-      day: "جمعه",
-      date: "14 آبان",
-      man: true,
-      start: "10:00",
-      end: "16:00",
-      price1: "700.000",
-      price2: "1.200.000",
-      quntitiy: "10",
-      buy: true,
-    },
-  ];
+  const [ListItem, setListItem] = useState();
+  useEffect(() => {
+    axios
+      .get("https://django-sport.iran.liara.run/api/secure/ticketshop_get/", {})
+      .then((response) => {
+        setListItem(response.data);
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  // const ListItem = [
+  //   {
+  //     day: "شنبه",
+  //     date: "9 آبان",
+  //     man: true,
+  //     start: "10:00",
+  //     end: "22:00",
+  //     price1: "700.000",
+  //     price2: "1.200.000",
+  //     quntitiy: "150",
+  //     buy: false,
+  //   },
+  //   {
+  //     day: "دوشنبه",
+  //     date: "11 آبان",
+  //     man: true,
+  //     start: "10:00",
+  //     end: "16:00",
+  //     price1: "700.000",
+  //     price2: "1.200.000",
+  //     quntitiy: "150",
+  //     buy: false,
+  //   },
+  //   {
+  //     day: "چهارشنبه",
+  //     date: "12 آبان",
+  //     man: true,
+  //     start: "10:00",
+  //     end: "22:00",
+  //     price1: "700.000",
+  //     price2: "1.200.000",
+  //     quntitiy: "10",
+  //     buy: false,
+  //   },
+  //   {
+  //     day: "جمعه",
+  //     date: "14 آبان",
+  //     man: true,
+  //     start: "10:00",
+  //     end: "16:00",
+  //     price1: "700.000",
+  //     price2: "1.200.000",
+  //     quntitiy: "10",
+  //     buy: true,
+  //   },
+  // ];
 
   const router = useRouter();
 
   const [checkboxStates, setCheckboxStates] = useState(
-    ListItem.map(() => false)
+    ListItem?.map(() => false)
   );
 
   const handleCheckboxChange = (index) => {
@@ -100,20 +113,20 @@ const TableEstakhr = () => {
                   item.man ? "bg-[#00A1FF]" : "bg-[#FF089A]"
                 } px-4 py-2 rounded-[8.754px]`}
               >
-                <p>{item.day}</p>
+                <p>{item.day_name}</p>
                 <p>{item.date}</p>
               </div>
               <div className=" py-2 rounded-[8.754px] flex items-center justify-center border ">
                 <div className="border-l px-10 flex flex-col items-center justify-center">
                   <p className="font-thin">شروع</p>
-                  <p>{item.start}</p>
+                  <p>{item.start_time}</p>
                 </div>
                 <div className=" px-10 flex flex-col items-center justify-center">
                   <p className="font-thin">پایان</p>
-                  <p>{item.end}</p>
+                  <p>{item.end_time}</p>
                 </div>
               </div>
-              {item.buy ? (
+              {item.quantity === 0 ? (
                 <div className="border px-[175px] rounded-[8.754px] py-[19px]">
                   <p>ظـــرفــیـــت تــکــمــیــل</p>
                 </div>
@@ -122,23 +135,23 @@ const TableEstakhr = () => {
                   <div className=" py-2 rounded-[8.754px] flex items-center justify-center border ">
                     <div className="border-l px-10 flex flex-col items-center justify-center">
                       <p className="font-thin">قیمت (هر نفر)</p>
-                      <p>{item.price1} ریال</p>
+                      <p>{item.Pool_price} ریال</p>
                     </div>
                     <div className=" px-10 flex flex-col items-center justify-center">
                       <div className="flex items-center gap-2">
                         <input
                           type="checkbox"
-                          checked={checkboxStates[index]}
+                          // checked={checkboxStates[index]}
                           onChange={() => handleCheckboxChange(index)}
                         />
                         <p className="font-thin">به همراه ماساژ</p>
                       </div>
-                      <p>{item.price2} ریال</p>
+                      <p>{item.Massage_price} ریال</p>
                     </div>
                   </div>
                   <div className=" px-4 py-2 rounded-[8.754px] border flex items-center flex-col justify-between ">
                     <p className="font-thin">ظرفیت</p>
-                    <p>{item.quntitiy}</p>
+                    <p>{item.quantity}</p>
                   </div>
                 </>
               )}
