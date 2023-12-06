@@ -93,7 +93,6 @@ const TableEstakhr = () => {
       router.push("/users/singup");
       console.log("کاربر وارد نشده است. لاگین کنید.");
     } else {
-      // Handle the purchase logic here based on the index
       console.log("Index:", index);
       console.log("Purchase logic for item:", ListItem[index]);
     }

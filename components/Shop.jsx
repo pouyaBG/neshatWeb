@@ -142,7 +142,7 @@ const App = () => {
         </button>
         <div className="flex items-start mr-5">
           <svg
-          className="mt-1"
+            className="mt-1"
             xmlns="http://www.w3.org/2000/svg"
             width="19"
             height="21"
@@ -156,7 +156,9 @@ const App = () => {
               stroke-width="0.0406901"
             />
           </svg>
-          <span className="bg-[#FF0606] px-2 text-white rounded-full">{selectedProducts.length}</span>
+          <span className="bg-[#FF0606] px-2 text-white rounded-full">
+            {selectedProducts.length}
+          </span>
         </div>
       </div>
       <SwiperSlideShop />
@@ -234,8 +236,8 @@ const App = () => {
               }`}
             />
             <div
-              className={`cursor-pointer  w-[250px] bg-gray-200 p-3 rounded-md ${
-                selectedType === "pants" ? "bg-[#C5E3FF]" : ""
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "pants" ? "bg-[#C5E3FF]" : "bg-gray-200"
               }`}
             >
               <div className="flex items-center justify-between">
@@ -256,8 +258,8 @@ const App = () => {
               }`}
             />
             <div
-              className={`cursor-pointer  w-[250px] bg-gray-200 p-3 rounded-md ${
-                selectedType === "shirts" ? "bg-[#C5E3FF]" : ""
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "shirts" ? "bg-[#C5E3FF]" : "bg-gray-200"
               }`}
             >
               <div className="flex items-center justify-between">
