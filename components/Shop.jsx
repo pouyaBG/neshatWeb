@@ -7,23 +7,46 @@ import Link from "next/link";
 import { useCart } from "@/provider/cart";
 
 const productsData = [
-  { id: 1, name: "شلوار ورزشی ", category: "men", type: "pants", price: 4300 },
+  {
+    id: 1,
+    name: "شلوار ورزشی ",
+    category: "men",
+    type: "pants",
+    price: 4300,
+    img: "/img/pr1.png",
+  },
   {
     id: 2,
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
     price: 4300,
+    img: "/img/pr1.png",
   },
-  { id: 3, name: "شلوار ورزشی", category: "men", type: "pants", price: 4300 },
+  {
+    id: 3,
+    name: "شلوار ورزشی",
+    category: "men",
+    type: "pants",
+    price: 4300,
+    img: "/img/pr1.png",
+  },
   {
     id: 4,
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
     price: 4300,
+    img: "/img/pr1.png",
   },
-  { id: 5, name: "شلوار ورزشی", category: "men", type: "pants", price: 4300 },
+  {
+    id: 5,
+    name: "شلوار ورزشی",
+    category: "men",
+    type: "pants",
+    price: 4300,
+    img: "/img/pr1.png",
+  },
 ];
 
 const Accordion = ({ title, children }) => {
@@ -91,11 +114,30 @@ const App = () => {
   const [selectedType, setSelectedType] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
-  const { addToCart } = useCart();
-  const handleBuyClick = (productId, category, type) => {
-    addToCart({ id: productId, quantity: 1, category, type });
+  const { addToCart, removeFromCart, selectedProducts } = useCart();
+  const handleBuyClick = (productId) => {
+    const isProductInCart = selectedProducts.some(
+      (item) => item.id === productId
+    );
+
+    if (isProductInCart) {
+      // If the product is in the cart, remove it
+      removeFromCart(productId);
+    } else {
+      // If the product is not in the cart, add it
+      const product = productsData.find((item) => item.id === productId);
+      if (product) {
+        addToCart({
+          id: productId,
+          quantity: 1,
+          category: product.category,
+          name: product.name,
+          price: product.price,
+          img: product.img,
+        });
+      }
+    }
   };
-  const { selectedProducts } = useCart();
   const handleCheckboxChange = (filterType, value) => {
     if (filterType === "category") {
       setSelectedCategory((prevCategory) =>
@@ -184,7 +226,7 @@ const App = () => {
                   className=" p-5 border border-[#fff0] rounded-lg hover:border-[#0000003B] transition-all "
                 >
                   <div className="w-[250px] h-[276.744px]">
-                    <img src="/img/pr1.png" alt={`Product ${product.id}`} />
+                    <img src={product.img} alt={`Product ${product.id}`} />
                   </div>
                   <div className="flex justify-between items-center mb-2 mt-6">
                     <h3 className="text-xl font-semibold ">{product.name}</h3>
