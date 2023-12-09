@@ -12,7 +12,7 @@ const productsData = [
     name: "شلوار ورزشی ",
     category: "men",
     type: "pants",
-    price: 4300,
+    price: 430_000,
     img: "/img/pr1.png",
   },
   {
@@ -20,15 +20,15 @@ const productsData = [
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
-    price: 4300,
-    img: "/img/pr1.png",
+    price: 430_000,
+    img: "/img/shop3.png",
   },
   {
     id: 3,
     name: "شلوار ورزشی",
     category: "men",
     type: "pants",
-    price: 4300,
+    price: 430_000,
     img: "/img/pr1.png",
   },
   {
@@ -36,7 +36,7 @@ const productsData = [
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
-    price: 4300,
+    price: 430_000,
     img: "/img/pr1.png",
   },
   {
@@ -44,7 +44,7 @@ const productsData = [
     name: "شلوار ورزشی",
     category: "men",
     type: "pants",
-    price: 4300,
+    price: 430_000,
     img: "/img/pr1.png",
   },
 ];
