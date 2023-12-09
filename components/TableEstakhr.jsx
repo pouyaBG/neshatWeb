@@ -8,7 +8,7 @@ const TableEstakhr = () => {
   const [ListItem, setListItem] = useState();
   useEffect(() => {
     axios
-      .get("https://django-sport.iran.liara.run/api/secure/ticketshop_get/", {})
+      .get("https://django-sport.iran.liara.run/api/secure/ticketshop_get/")
       .then((response) => {
         setListItem(response.data);
         console.log(response.data);

@@ -2,13 +2,26 @@
 import React, { useState } from "react";
 import "tailwindcss/tailwind.css";
 import SwiperSlideShop from "./SwiperSlideShop";
+import Mark from "./Mark";
 
 const productsData = [
-  { id: 1, name: "لباس ورزشی", category: "men", type: "pants", price: 4300 },
-  { id: 2, name: "لباس ورزشی", category: "women", type: "shirts", price: 4300 },
-  { id: 3, name: "لباس ورزشی", category: "men", type: "pants", price: 4300 },
-  { id: 4, name: "لباس ورزشی", category: "women", type: "shirts", price: 4300 },
-  { id: 5, name: "لباس ورزشی", category: "men", type: "pants", price: 4300 },
+  { id: 1, name: "شلوار ورزشی ", category: "men", type: "pants", price: 4300 },
+  {
+    id: 2,
+    name: "تی شرت ورزشی",
+    category: "women",
+    type: "shirts",
+    price: 4300,
+  },
+  { id: 3, name: "شلوار ورزشی", category: "men", type: "pants", price: 4300 },
+  {
+    id: 4,
+    name: "تی شرت ورزشی",
+    category: "women",
+    type: "shirts",
+    price: 4300,
+  },
+  { id: 5, name: "شلوار ورزشی", category: "men", type: "pants", price: 4300 },
 ];
 
 const Accordion = ({ title, children }) => {
@@ -162,7 +175,8 @@ const App = () => {
         </div>
       </div>
       <SwiperSlideShop />
-      <div className="container flex items-start justify-between p-10">
+      <Mark />
+      <div className="container m-auto flex items-start justify-between p-10 ">
         <div className=" grid grid-cols-3 gap-10" id="productsSection">
           {filteredProducts.length > 0 ? (
             <>
@@ -180,7 +194,11 @@ const App = () => {
                   <div className="flex items-center justify-between">
                     <p className="text-gray-700">تومان {product.price}</p>
                     <button
-                      className="bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md"
+                      className={`bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md ${
+                        selectedProducts.find((item) => item.id === product.id)
+                          ? "bg-[#9e2727]"
+                          : "bg-[#3DAC6A]"
+                      }`}
                       onClick={() =>
                         handleBuyClick(
                           product.id,
