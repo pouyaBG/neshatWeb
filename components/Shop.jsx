@@ -14,38 +14,43 @@ const productsData = [
     type: "pants",
     price: 430_000,
     img: "/img/pr1.png",
+    link: "products/1",
   },
   {
     id: 2,
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
-    price: 430_000,
+    price: 530_000,
     img: "/img/shop3.png",
+    link: "products/2",
   },
   {
     id: 3,
     name: "شلوار ورزشی",
     category: "men",
     type: "pants",
-    price: 430_000,
+    price: 1000_000,
     img: "/img/pr1.png",
+    link: "/products/3",
   },
   {
     id: 4,
     name: "تی شرت ورزشی",
     category: "women",
     type: "shirts",
-    price: 430_000,
+    price: 930_000,
     img: "/img/pr1.png",
+    link: "products/4",
   },
   {
     id: 5,
     name: "شلوار ورزشی",
     category: "men",
     type: "pants",
-    price: 430_000,
+    price: 230_000,
     img: "/img/pr1.png",
+    link: "products/5",
   },
 ];
 
@@ -225,60 +230,49 @@ const App = () => {
                   key={product.id}
                   className=" p-5 border border-[#fff0] rounded-lg hover:border-[#0000003B] transition-all "
                 >
-                  <div className="w-[250px] h-[276.744px]">
-                    <img src={product.img} alt={`Product ${product.id}`} />
-                  </div>
-                  <div className="flex justify-between items-center mb-2 mt-6">
-                    <h3 className="text-xl font-semibold ">{product.name}</h3>
-                    <div className="flex items-center justify-between gap-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="19"
-                        height="18"
-                        viewBox="0 0 19 18"
-                        fill="none"
-                      >
-                        <g clip-path="url(#clip0_3732_2066)">
-                          <path
-                            d="M14.775 17.1945L9.3082 13.1766L3.84141 17.1945L5.94042 10.7057L0.476562 6.71344H7.22237L9.3082 0.213623L11.394 6.71344H18.1391L12.676 10.7057L14.775 17.1945Z"
-                            fill="#F5D426"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_3732_2066">
-                            <rect
-                              width="17.571"
-                              height="17.571"
-                              fill="white"
-                              transform="translate(0.523438 0.125)"
-                            />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <h2 className="text-black">4.2</h2>
+                  <Link href={product.link}>
+                    <div className="w-[250px] h-[276.744px]">
+                      <img src={product.img} alt={`Product ${product.id}`} />
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <p className="text-gray-700">تومان {product.price}</p>
-                    <button
-                      className={`bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md ${
-                        selectedProducts.find((item) => item.id === product.id)
-                          ? "bg-[#9e2727]"
-                          : "bg-[#3DAC6A]"
-                      }`}
-                      onClick={() =>
-                        handleBuyClick(
-                          product.id,
-                          product.category,
-                          product.type
-                        )
-                      }
-                    >
-                      {selectedProducts.find((item) => item.id === product.id)
-                        ? "حذف"
-                        : "خرید"}
-                    </button>
-                  </div>
+                    <div className="flex justify-between items-center mb-2 mt-6">
+                      <h3 className="text-xl font-semibold ">{product.name}</h3>
+                      <div className="flex items-center justify-between gap-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                        >
+                          <g clip-path="url(#clip0_3732_2066)">
+                            <path
+                              d="M14.775 17.1945L9.3082 13.1766L3.84141 17.1945L5.94042 10.7057L0.476562 6.71344H7.22237L9.3082 0.213623L11.394 6.71344H18.1391L12.676 10.7057L14.775 17.1945Z"
+                              fill="#F5D426"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_3732_2066">
+                              <rect
+                                width="17.571"
+                                height="17.571"
+                                fill="white"
+                                transform="translate(0.523438 0.125)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <h2 className="text-black">4.2</h2>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <p className="text-gray-700">{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} تومان</p>
+                      <button
+                        className={`bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md `}
+                      >
+                        خرید
+                      </button>
+                    </div>
+                  </Link>
                 </div>
               ))}
             </>

@@ -206,7 +206,7 @@ const Navbar = () => {
       </div>
       <div className="w-full h-fit bg-Primery  justify-between items-center text-white p-3 px-11 hidden lg:flex">
         <div>
-          <Image src={"svg/logo.svg"} width={80} height={50} priority />
+          <Image src={"/svg/logo.svg"} width={80} height={50} priority />
         </div>
         <div>
           <ul className="flex justify-between items-center gap-10">
