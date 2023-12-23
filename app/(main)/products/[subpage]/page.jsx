@@ -1,6 +1,6 @@
 "use client";
 
-import Productone from "@/components/productone";
+import Productone from "@/components/Productone";
 import { useCart } from "@/provider/cart";
 import Link from "next/link";
 
