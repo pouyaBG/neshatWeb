@@ -1,7 +1,6 @@
 import React from "react";
 import { useCart } from "@/provider/cart";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 const Productone = ({ paramss }) => {
