@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
@@ -30,7 +30,9 @@ export const CartProvider = ({ children }) => {
       prevSelected.filter((item) => {
         if (item.id === productId) {
           // Decrease the quantity if greater than 1, otherwise remove the item
-          return item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : false;
+          return item.quantity > 1
+            ? { ...item, quantity: item.quantity - 1 }
+            : false;
         }
         return true;
       })
@@ -38,7 +40,14 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ selectedProducts, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        selectedProducts,
+        addToCart,
+        removeFromCart,
+        setSelectedProducts,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

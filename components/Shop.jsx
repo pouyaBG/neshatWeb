@@ -265,7 +265,12 @@ const App = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-gray-700">{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} تومان</p>
+                      <p className="text-gray-700">
+                        {product.price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                        تومان
+                      </p>
                       <button
                         className={`bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md `}
                       >
@@ -346,6 +351,50 @@ const App = () => {
                 <p>تی شرت </p>
                 <div>
                   <img src="/svg/t.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedType === "shal"}
+              onChange={() => handleCheckboxChange("type", "shal")}
+              className={`hidden ${
+                selectedType === "shal" ? "checked:bg-[#C5E3FF]" : ""
+              }`}
+            />
+            <div
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "shal" ? "bg-[#C5E3FF]" : "bg-gray-200"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <p>شلوارک </p>
+                <div>
+                  <img src="/img/ss.svg" alt="" />
+                </div>
+              </div>‍
+            </div>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedType === "jor"}
+              onChange={() => handleCheckboxChange("type", "jor")}
+              className={`hidden ${
+                selectedType === "jor" ? "checked:bg-[#C5E3FF]" : ""
+              }`}
+            />
+            <div
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "jor" ? "bg-[#C5E3FF]" : "bg-gray-200"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <p>جوراب </p>
+                <div>
+                  <img src="/img/ff.svg" alt="" />
                 </div>
               </div>
             </div>

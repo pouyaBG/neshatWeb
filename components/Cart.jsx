@@ -2,14 +2,23 @@
 import Link from "next/link";
 import { useCart } from "@/provider/cart";
 import Image from "next/image";
+import { useState } from "react";
+import PaymentConfirmationModal from "./modal";
 
 const Cart = () => {
-  const { selectedProducts } = useCart();
+  const { selectedProducts, setSelectedProducts } = useCart();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const totalPrice = selectedProducts.reduce(
     (total, product) => total + product.price * product.quantity,
     0
   );
-  console.log(selectedProducts);
+  const handlePaymentConfirmation = () => {
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setSelectedProducts([]);
+    setIsModalOpen(false);
+  };
   return (
     <div className="container p-10 w-full m-auto">
       <div className="border-b-2 border-[#2594FF] w-fit pb-1">
@@ -23,7 +32,7 @@ const Cart = () => {
             {selectedProducts.map((product) => (
               <div key={product.id} className="  border-b-2 p-1">
                 <div className="flex items-start gap-2 p-5">
-                  <div className="w-[160px] h-[200px]">
+                  <div className="w-[220px] h-[300px] ml-5">
                     <Image src={product.img} width={700} height={700} />
                   </div>
                   <div className="flex flex-col gap-3">
@@ -43,7 +52,10 @@ const Cart = () => {
                       رنگ: {product.color}
                     </p>
                     <p className="text-black text-[20.723px] not-italic font-medium leading-[normal]">
-                      {product.price} تومان
+                      {product.price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      تومان
                     </p>
                   </div>
                 </div>
@@ -72,12 +84,22 @@ const Cart = () => {
               {totalPrice} تومان
             </p>
           </div>
-          <div className="w-full bg-[#59AC49] rounded-[8px] mt-5">
+          <div
+            className="w-full bg-[#59AC49] rounded-[8px] mt-5"
+            onClick={handlePaymentConfirmation}
+          >
             <Link href="#">
               <p className=" p-2 text-center text-white">پرداخت</p>
             </Link>
           </div>
         </div>
+      </div>
+      <div>
+        <PaymentConfirmationModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          onConfirm={handleCloseModal} // You can customize this function as needed
+        />
       </div>
     </div>
   );
