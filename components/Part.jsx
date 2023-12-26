@@ -32,7 +32,7 @@ const Part = () => {
 
   return (
     <div className="w-full flex flex-col items-center gap-20  ">
-      <div className="flex gap-10 items-center mb-10">
+      <div className="flex gap-10 items-center mb-5">
         {[1, 2, 3, 4].map((pageNumber) => (
           <button
             key={pageNumber}

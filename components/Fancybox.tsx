@@ -27,7 +27,7 @@ function Fancybox(props: PropsWithChildren<Props>) {
     };
   });
 
-  return <div className='flex items-center gap-5 flex-wrap m-auto w-full justify-center ' ref={containerRef}>{props.children}</div>;
+  return <div className='grid grid-cols-3 gap-10 ' ref={containerRef}>{props.children}</div>;
 }
 
 export default Fancybox;
