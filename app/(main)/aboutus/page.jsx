@@ -59,7 +59,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="my-10  w-full">
+      <div className="my-20  w-full">
         <p className="text-black text-center text-3xl not-italic font-bold leading-[44px]">
           افتخار آفرینانی که با مجموعه ما کار کردند
         </p>
@@ -120,7 +120,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="my-20">
         <p className="text-black text-center text-3xl not-italic font-bold leading-[44px] mb-5">
           خدمات و امکانات مجموعه ما
         </p>
