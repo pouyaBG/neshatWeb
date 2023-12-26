@@ -1,9 +1,10 @@
+import Part from "@/components/Part";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <div className="relative mb-10">
+      <div className="relative mb-20">
         <div className="absolute  -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4 z-50">
           <p className="text-white text-[40px] not-italic font-bold leading-[normal] text-center mb-2">
             گالری مجموعه
@@ -21,6 +22,7 @@ const page = () => {
         />
         <img src="/img/Mask group.png" alt="" className="w-full object-cover" />
       </div>
+      <Part />
     </div>
   );
 };
