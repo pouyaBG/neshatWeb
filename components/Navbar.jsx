@@ -222,13 +222,13 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/about">
+              <Link href="/gallery">
                 <p
                   className={`font-thin hover:scale-105 transition-all  ${
-                    pathname === "/about" ? "active font-medium" : ""
+                    pathname === "/gallery" ? "active font-medium" : ""
                   }`}
                 >
-                  تور مجازی
+                  گالری
                 </p>
               </Link>
             </li>

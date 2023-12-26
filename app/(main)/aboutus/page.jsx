@@ -1,5 +1,4 @@
 import Mi from "@/components/Mi";
-import Image from "next/image";
 import React from "react";
 
 const page = () => {
@@ -10,10 +9,10 @@ const page = () => {
       </p>
       <div className=" my-5 w-[70%]">
         <p className="text-[#5B5B5B] text-center text-xl not-italic font-thin leading-[normal]">
-          "خوش آمدید به وبسایت مجموعه ورزشی ما! با افتخار به شما ارائه می‌دهیم
+          خوش آمدید به وبسایت مجموعه ورزشی ما! با افتخار به شما ارائه می‌دهیم
           که در آن می‌توانید از جدیدترین اخبار ورزشی، آموزش‌های تخصصی، و
           فعالیت‌های متنوع ما باخبر شوید. از ما دیدن کنید و به تجربه ورزشی منحصر
-          به فرد ما بپیوندید!"
+          به فرد ما بپیوندید!
         </p>
       </div>
       <div className="w-[70%]">
