@@ -6,7 +6,7 @@ import { useState } from "react";
 import PaymentConfirmationModal from "./modal";
 
 const Cart = () => {
-  const { selectedProducts, setSelectedProducts } = useCart();
+  const { selectedProducts, setSelectedProducts, removeFromCart } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const totalPrice = selectedProducts.reduce(
     (total, product) => total + product.price * product.quantity,
@@ -19,7 +19,6 @@ const Cart = () => {
     setSelectedProducts([]);
     setIsModalOpen(false);
   };
-  console.log(selectedProducts);
   return (
     <div className="container p-10 w-full m-auto">
       <div className="border-b-2 border-[#2594FF] w-fit pb-1">
@@ -58,6 +57,12 @@ const Cart = () => {
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
                       تومان
                     </p>
+                    <button
+                      className="text-white px-5 py-2 rounded bg-[#FF4040] text-right text-[15px] not-italic font-medium leading-6 cursor-pointer"
+                      onClick={() => removeFromCart(product.id)}
+                    >
+                      حذف از سبد خرید
+                    </button>
                   </div>
                 </div>
               </div>

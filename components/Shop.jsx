@@ -114,7 +114,6 @@ const Accordion = ({ title, children }) => {
 };
 
 const App = () => {
-  // const [selectedProducts, setSelectedProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedType, setSelectedType] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -374,7 +373,8 @@ const App = () => {
                 <div>
                   <img src="/img/ss.svg" alt="" />
                 </div>
-              </div>‍
+              </div>
+              ‍
             </div>
           </label>
           <label>

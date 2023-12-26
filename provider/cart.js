@@ -5,7 +5,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [selectedProducts, setSelectedProducts] = useState([]);
-  
+
   const addToCart = (product) => {
     const existingProductIndex = selectedProducts.findIndex(
       (item) => item.id === product.id
@@ -26,6 +26,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (productId) => {
+    window.location.reload();
     setSelectedProducts((prevSelected) =>
       prevSelected.map((item) =>
         item.id === productId

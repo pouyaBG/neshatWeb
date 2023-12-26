@@ -119,20 +119,20 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="my-20">
-        <p className="text-black text-center text-3xl not-italic font-bold leading-[44px] mb-5">
+      <div className="mb-20">
+        <p className="text-black text-center text-3xl not-italic font-bold leading-[44px] mb-10">
           خدمات و امکانات مجموعه ما
         </p>
-        <div className="flex items-start justify-between gap-5 mb-10">
-          <div className="flex flex-col gap-5">
-            <div className="bg-[#EBF5FF] w-[476px] p-2 rounded">
+        <div className="flex items-start justify-between gap-10 mb-10">
+          <div className="flex flex-col gap-10">
+            <div className="bg-[#EBF5FF] w-[496px] p-5 rounded shadow-md">
               <p>محتوای تخصصی:</p>
               <p className="font-thin">
                 ارائه مقالات، ویدئوها و راهنماهای تخصصی در زمینه‌های تمرینات،
                 تغذیه و بهبود عملکرد ورزشی.
               </p>
             </div>
-            <div className="bg-[#EBF5FF] w-[476px] p-2 rounded">
+            <div className="bg-[#EBF5FF] w-[496px] p-5 rounded shadow-md">
               <p>برنامه‌های تمرینی شخصی:</p>
               <p className="font-thin">
                 فراهم کردن برنامه‌های تمرینی شخصی با توجه به اهداف و نیازهای
@@ -140,15 +140,15 @@ const page = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <div className="bg-[#EBF5FF] w-[476px] p-2 rounded">
+          <div className="flex flex-col gap-10">
+            <div className="bg-[#EBF5FF] w-[496px] p-5 rounded shadow-md">
               <p>جامعه آنلاین:</p>
               <p className="font-thin">
                 ایجاد یک فضای اجتماعی برای تبادل تجربیات و اطلاعات بین افراد
                 علاقه‌مند به ورزش و سلامت.
               </p>
             </div>
-            <div className="bg-[#EBF5FF] w-[476px] p-2 rounded">
+            <div className="bg-[#EBF5FF] w-[496px] p-5 rounded shadow-md">
               <p>پشتیبانی از اهداف خاص:</p>
               <p className="font-thin">
                 حمایت و راهنمایی افراد با اهداف ورزشی خاص از طریق منابع و
