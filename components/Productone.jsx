@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Productone = ({ paramss }) => {
+  const [tedad, setQuantity] = useState(1);
   const remainingItems = 2;
   const totalItems = 20;
   const percentage = 100 - (remainingItems / totalItems) * 100;
@@ -64,7 +65,11 @@ const Productone = ({ paramss }) => {
   const { addToCart, removeFromCart, selectedProducts } = useCart();
   const handleBuyClick = () => {
     const isProductInCart = selectedProducts.some(
-      (item) => item.id === product.id
+      (item) =>
+        item.id === product.id &&
+        item.size === selectedSize &&
+        item.color === selectedColor &&
+        item.tedad === tedad
     );
 
     if (isProductInCart) {
@@ -72,7 +77,8 @@ const Productone = ({ paramss }) => {
     } else {
       addToCart({
         id: product.id,
-        quantity: 1,
+        quantity: tedad,
+        tedad: tedad,
         category: product.category,
         name: product.name,
         price: product.price,
@@ -81,6 +87,12 @@ const Productone = ({ paramss }) => {
         color: selectedColor,
       });
     }
+  };
+
+  const handleQuantityChange = (amount) => {
+    // بر اساس مقدار amount، تعداد محصول را افزایش یا کاهش دهید
+    const newQuantity = Math.max(1, tedad + amount);
+    setQuantity(newQuantity);
   };
   const isInCart = selectedProducts.some((item) => item.id === product.id);
   const handleColorChange = (color) => {
@@ -195,8 +207,24 @@ const Productone = ({ paramss }) => {
               onClick={() => handleColorChange("صورتی")}
             ></div>
           </div>
-          <p className="my-3">تعداد</p>
-          <div>
+          <div className="flex items-center gap-5 my-5 ">
+            <div className="flex items-center gap-5 border-2 rounded text-[18px] font-medium px-5 py-2">
+              <div
+                className="cursor-pointer"
+                onClick={() => handleQuantityChange(-1)}
+              >
+                <p>-</p>
+              </div>
+              <div>
+                <p>{tedad}</p>
+              </div>
+              <div
+                className="cursor-pointer"
+                onClick={() => handleQuantityChange(1)}
+              >
+                <p>+</p>
+              </div>
+            </div>
             <button
               onClick={() =>
                 handleBuyClick(product.id, product.category, product.type)

@@ -19,6 +19,7 @@ const Cart = () => {
     setSelectedProducts([]);
     setIsModalOpen(false);
   };
+  console.log(selectedProducts);
   return (
     <div className="container p-10 w-full m-auto">
       <div className="border-b-2 border-[#2594FF] w-fit pb-1">
@@ -40,9 +41,6 @@ const Cart = () => {
                       {product.name}
                     </p>
                     <p className="text-[#656565] text-right text-[15px] not-italic font-medium leading-6">
-                      {product.quantity} مجاز به خرید
-                    </p>
-                    <p className="text-[#656565] text-right text-[15px] not-italic font-medium leading-6">
                       موجود در انبار
                     </p>
                     <p className="text-[#656565] text-right text-[15px] not-italic font-medium leading-6">
@@ -50,6 +48,9 @@ const Cart = () => {
                     </p>
                     <p className="text-[#656565] text-right text-[15px] not-italic font-medium leading-6">
                       رنگ: {product.color}
+                    </p>
+                    <p className="text-[#656565] text-right text-[15px] not-italic font-medium leading-6">
+                      تعداد: {product.tedad}
                     </p>
                     <p className="text-black text-[20.723px] not-italic font-medium leading-[normal]">
                       {product.price

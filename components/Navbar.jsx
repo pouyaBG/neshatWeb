@@ -255,10 +255,10 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact">
+              <Link href="/aboutus">
                 <p
                   className={`font-thin  hover:scale-105 transition-all  ${
-                    pathname === "/about" ? "active font-medium" : ""
+                    pathname === "/aboutus" ? "active font-medium" : ""
                   }`}
                 >
                   درباره ما
