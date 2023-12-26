@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import PageOneContent from "./PageOneContent";
+import PageTwoContent from "./PageTwoContent";
+import PageThreeContent from "./PageThreeContent";
 
-const PageTwoContent = () => <p>This is content for Page Two</p>;
-const PageThreeContent = () => <p>This is content for Page Three</p>;
 const PageFourContent = () => <p>This is content for Page Four</p>;
 
 const Content = ({ activeButton }) => {
