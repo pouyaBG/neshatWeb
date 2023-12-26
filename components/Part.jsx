@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import PageOneContent from "./PageOneContent";
 import PageTwoContent from "./PageTwoContent";
 import PageThreeContent from "./PageThreeContent";
+import PageFourContent from "./PageFourContent";
 
-const PageFourContent = () => <p>This is content for Page Four</p>;
 
 const Content = ({ activeButton }) => {
   const contentMap = {
