@@ -13,6 +13,8 @@ const productsData = [
     category: "men",
     type: "pants",
     price: 430_000,
+    dis: 490000,
+    per: 20,
     img: "/img/pr1.png",
     link: "products/1",
   },
@@ -40,6 +42,8 @@ const productsData = [
     category: "women",
     type: "shirts",
     price: 930_000,
+    dis: 2000000,
+    per: 60,
     img: "/img/pr1.png",
     link: "products/4",
   },
@@ -230,8 +234,19 @@ const App = () => {
                   className=" p-5 border border-[#fff0] rounded-lg hover:border-[#0000003B] transition-all "
                 >
                   <Link href={product.link}>
-                    <div className="w-[250px] h-[276.744px]">
-                      <img src={product.img} alt={`Product ${product.id}`} />
+                    <div className="relative">
+                      {product.per ? (
+                        <>
+                          <div className="absolute left-3 text-[14px] top-2 rounded-full px-3 py-3 shadow-sm border border-red-800  bg-red-600 text-white">
+                            {product.per}%
+                          </div>
+                        </>
+                      ) : (
+                        ""
+                      )}
+                      <div className="w-[250px] h-[276.744px]">
+                        <img src={product.img} alt={`Product ${product.id}`} />
+                      </div>
                     </div>
                     <div className="flex justify-between items-center mb-2 mt-6">
                       <h3 className="text-xl font-semibold ">{product.name}</h3>
@@ -264,12 +279,17 @@ const App = () => {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-gray-700">
-                        {product.price
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                        تومان
-                      </p>
+                      <div className="">
+                        <p className="text-gray-700">
+                          {product.price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          تومان
+                        </p>
+                        <p className="text-red-500 line-through">
+                          {product.dis ? <>{product.dis} تومان</> : ""}
+                        </p>
+                      </div>
                       <button
                         className={`bg-[#3DAC6A] text-white px-4 py-2 mt-2 rounded-md `}
                       >

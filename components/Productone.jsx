@@ -15,6 +15,8 @@ const Productone = ({ paramss }) => {
       category: "men",
       type: "pants",
       price: 430_000,
+      dis: 490000,
+      per: 20,
       img: "/img/pr1.png",
       link: "products/1",
     },
@@ -42,6 +44,8 @@ const Productone = ({ paramss }) => {
       category: "women",
       type: "shirts",
       price: 930_000,
+      dis: 2000000,
+      per: 60,
       img: "/img/pr1.png",
       link: "products/4",
     },
@@ -55,6 +59,7 @@ const Productone = ({ paramss }) => {
       link: "products/5",
     },
   ];
+
   const product = productsData.find((p) => p.id.toString() === paramss.subpage);
 
   const [selectedSize, setSize] = useState("M");
@@ -90,7 +95,6 @@ const Productone = ({ paramss }) => {
   };
 
   const handleQuantityChange = (amount) => {
-    // بر اساس مقدار amount، تعداد محصول را افزایش یا کاهش دهید
     const newQuantity = Math.max(1, tedad + amount);
     setQuantity(newQuantity);
   };
@@ -133,11 +137,21 @@ const Productone = ({ paramss }) => {
               className="w-[75px] "
             />
           </div>
-          <div>
+          <div className="flex gap-2">
             <p>
               {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
               تومان
             </p>
+            {product.dis ? (
+              <>
+                <p className="text-red-500 line-through">{product.dis} تومان</p>
+                <div className="bg-red-600 px-3 py-1 rounded-[9px]">
+                  <p className="text-white">{product.per}% تخفیف</p>
+                </div>
+              </>
+            ) : (
+              ""
+            )}
           </div>
           <div className="my-2">
             <p>فقط {remainingItems} مورد در انبار باقی مانده است!</p>
