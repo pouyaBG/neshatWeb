@@ -46,7 +46,7 @@ export default function App() {
             src="/img/img4.png"
             width="400"
             height="250"
-            className="rounded-xl"
+            className="rounded-xl h-[260px] object-cover"
           />
         </a>
       </Fancybox>

@@ -59,27 +59,27 @@ const page = () => {
         </div>
       </div>
       <div className="my-20  w-full">
-        <p className="text-black text-center text-3xl not-italic font-bold leading-[44px]">
+        <p className="text-black text-center text-3xl not-italic font-bold leading-[50px]">
           افتخار آفرینانی که با مجموعه ما کار کردند
         </p>
         <div className="bg-[#F6F6F6] flex items-start gap-10 mt-5 p-5">
           <div className="p-5 w-[656px]">
-            <li>خلیل اسدی</li>
+            <li className="mb-2">خلیل اسدی</li>
             <p className="font-thin mr-10 py-1">
               متولد 1367/8/24 شهرستان آمل می باشد و کارشناس تربیت بدنی است.
             </p>
-            <p className="font-thin mr-10 py-1">
+            <p className="font-thin mr-10 py-1 mb-5">
               خلیل اسدی مدت 8سال است که برای قوای آمادگی جسمانی به بدنسازی رفته
               است و تا به امروز این ورزش را ادامه داده است.
             </p>
-            <h3 className="mr-2">افتخارات وی :</h3>
+            <h3 className="mr-2 mb-2">افتخارات وی :</h3>
             <div>
               <span className="ml-5 font-thin mr-10">
                 قهرماني آسيا ٢٠١٤ سريلانكا IFBB
               </span>{" "}
               <span className="font-thin ">اوورال آسيا ٢٠١٤ IFBB</span>
             </div>
-            <div>
+            <div className="mb-5">
               <span className="ml-[44.5px] font-thin mr-10">
                 نايب قهرمان جهان ٢٠١٥ IFBB
               </span>
@@ -87,7 +87,7 @@ const page = () => {
                 قهرمان مسابقات جام الماس ٢٠١٥ IFBB
               </span>
             </div>
-            <li>اللهیار صیادمنش</li>
+            <li className="mb-2">اللهیار صیادمنش</li>
             <p className="font-thin mr-10">
               متولد 8 تیر 1380 بازیکن فوتبال اهل شهرستان آمل می باشد.
             </p>
@@ -101,19 +101,19 @@ const page = () => {
               <img
                 src="/img/al.png"
                 alt="Upper Right Image"
-                className="object-contain w-[292px]  rounded-lg"
+                className="object-contain w-[292px]  rounded-lg shadow-md"
               />
               <img
                 src="/img/mi2.png"
                 alt="Lower Right Image"
-                className="object-contain w-[292px]  rounded-lg"
+                className="object-contain w-[292px]  rounded-lg shadow-md"
               />
             </div>
             <div className="w-[50%] -mr-[100px]">
               <img
                 src="/img/mi3.png"
                 alt="Left Image"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg shadow-md"
               />
             </div>
           </div>
