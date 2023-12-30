@@ -41,20 +41,20 @@ const page = () => {
         </p>
         <div className="w-full flex gap-8 mb-10">
           <div className="w-[510px]">
-            <p className="text-[#5B5B5B] text-justify text-[22px] not-italic font-thin leading-loose">
+            <p className="text-[#5B5B5B] text-justify text-[20px] not-italic font-thin leading-loose">
               در مجموعه ورزشی ما، به ارائه محتوای تازه و تخصصی در زمینه‌های
               ورزشی، تناسب اندام و تغذیه متمرکز هستیم. هدف ما ایجاد یک جامعه
               پویا از علاقه‌مندان به ورزش است که تجربیات و ایده‌هایشان را با هم
               به اشتراک بگذارند.
             </p>
-            <p className="text-[#5B5B5B] text-justify text-[22px] not-italic font-thin leading-loose">
+            <p className="text-[#5B5B5B] text-justify text-[20px] not-italic font-thin leading-loose">
               با حمایت از افراد با اهداف ورزشی خاص، ما سعی داریم تا بهبودی در
               سبک زندگی ایجاد کنیم و افراد را در مسیر بهبود ورزشی و سلامتی خود
               هدایت کنیم.
             </p>
           </div>
           <div className="  ">
-            <img src="/img/tn.png" className="object-contain rounded-[30px] border-[3px] border-[#DED60E]" />
+            <img src="/img/tn.png" className="object-contain rounded-[30px] border-[3px]  border-[#DED60E]" />
           </div>
         </div>
       </div>
