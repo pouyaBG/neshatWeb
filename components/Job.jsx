@@ -9,12 +9,12 @@ const Job = () => {
   return (
     <>
       <div className="bg-[#ECECEC] w-full items-center shadow-lg flex m-auto justify-center gap-32  p-10 rounded-[60px]">
-        <div className="flex flex-col gap-10 ">
+        <div className="flex flex-col gap-7 ">
           <p className="text-black text-[30px] not-italic font-normal leading-[normal] Homa">
             اشتیاق خود را به <span className="text-[#F40B0B] Homa">شغل</span> خود
             تبدیل کنید!
           </p>
-          <p className="text-[#444] text-justify text-[17px] not-italic font-thin leading-[40px] w-[596px] ">
+          <p className="text-[#444] text-justify text-[17px] not-italic font-thin leading-[30px] w-[596px] ">
             ما در نشاط به دنبال افراد پرانرژی و متعهد در حوزه ورزشی هستیم. اگر
             عاشق چالش‌های ورزشی و مایل به همکاری در یک محیط پویا هستید، ما منتظر
             استعداد شما هستیم.
