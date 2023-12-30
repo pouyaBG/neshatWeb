@@ -58,6 +58,15 @@ const productsData = [
     img: "/img/pr1.png",
     link: "products/5",
   },
+  {
+    id: 6,
+    name: "لباس ورزشی",
+    category: "wome",
+    type: "shirts",
+    price: 350_000,
+    img: "/img/Group 1321314862.png",
+    link: "products/6",
+  },
 ];
 
 const Accordion = ({ title, children }) => {
