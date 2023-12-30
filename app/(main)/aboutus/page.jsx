@@ -7,8 +7,8 @@ const page = () => {
       <p className="text-black w-[70%] text-center mt-10 text-[40px] not-italic font-bold leading-[normal] mb-2">
         درباره مجموعه ما
       </p>
-      <div className=" my-5 mb-9 w-[70%]">
-        <p className="text-[#5B5B5B] text-center text-xl not-italic font-thin leading-[normal]">
+      <div className=" my-5 mb-9 w-[67%]">
+        <p className="text-[#5B5B5B] text-center text-[19px] not-italic font-thin leading-[normal]">
           خوش آمدید به وبسایت مجموعه ورزشی ما! با افتخار به شما ارائه می‌دهیم
           که در آن می‌توانید از جدیدترین اخبار ورزشی، آموزش‌های تخصصی، و
           فعالیت‌های متنوع ما باخبر شوید. از ما دیدن کنید و به تجربه ورزشی منحصر
