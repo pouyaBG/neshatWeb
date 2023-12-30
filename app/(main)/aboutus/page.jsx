@@ -17,16 +17,16 @@ const page = () => {
       </div>
       <div className="w-[70%]">
         <div className="w-full  flex gap-10 m-auto mr-10">
-          <div className=" w-[40%]  max-h-[500px]  rounded-[37.611px]  p-2">
+          <div className=" w-[40%]  max-h-[500px]  rounded-[37.611px] ">
             <img
               src={"/img/ab.png"}
-              className="object-cover rounded-[37.611px] h-[400px] "
+              className="object-cover rounded-[37.611px] h-[400px] border-[3px] border-[#DED60E]"
             />
           </div>
-          <div className="w-[60%] max-h-[550px] rounded-[37.611px]   p-2">
+          <div className="w-[60%] max-h-[550px] rounded-[37.611px]   ">
             <img
               src={"/img/ab2.png"}
-              className="object-cover  rounded-[37.611px] h-[400px]"
+              className="object-cover  rounded-[37.611px] h-[400px] border-[3px] border-[#DED60E]"
             />
           </div>
         </div>
@@ -54,7 +54,7 @@ const page = () => {
             </p>
           </div>
           <div className="  ">
-            <img src="/img/tn.png" className="object-contain rounded-[30px] " />
+            <img src="/img/tn.png" className="object-contain rounded-[30px] border-[3px] border-[#DED60E]" />
           </div>
         </div>
       </div>
