@@ -169,13 +169,20 @@ const Modal2 = ({ isOpen, onClose, title }) => {
                   </div>
                 </h3>
               </div>
-              <div className="bg-white p-5">
+              <div className="bg-white p-5 flex gap-5">
                 <button
                   onClick={onClose}
                   type="button"
                   className="w-fit flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-[#E74B54] text-white"
                 >
                   ارسال درخواست
+                </button>
+                <button
+                  onClick={onClose}
+                  type="button"
+                  className="w-fit flex justify-center rounded-md border border-transparent px-4 py-2 bg-white shadow-md  text-black"
+                >
+                 لغو
                 </button>
               </div>
             </div>

@@ -9,20 +9,20 @@ const Job = () => {
   return (
     <>
       <div className="bg-[#ECECEC] w-full items-center shadow-lg flex m-auto justify-center gap-32  p-10 rounded-[60px]">
-        <div className="flex flex-col gap-10">
-          <p className="text-black text-[25px] not-italic font-normal leading-[normal]">
+        <div className="flex flex-col gap-10 ">
+          <p className="text-black text-[30px] not-italic font-normal leading-[normal] Homa">
             اشتیاق خود را به <span className="text-[#F40B0B]">شغل</span> خود
             تبدیل کنید!
           </p>
-          <p className="text-[#444] text-justify text-[17px] not-italic font-thin leading-[normal] w-[596px]">
+          <p className="text-[#444] text-justify text-[18px] not-italic font-thin leading-[40px] w-[596px] Homa">
             ما در نشاط به دنبال افراد پرانرژی و متعهد در حوزه ورزشی هستیم. اگر
             عاشق چالش‌های ورزشی و مایل به همکاری در یک محیط پویا هستید، ما منتظر
             استعداد شما هستیم.
           </p>
-          <div className="flex items-center  gap-5 p-2">
+          <div className="flex items-center  gap-5 p-2 ">
             <button
               onClick={() => setCommentPage("mot")}
-              className={`transition-all  text-black rounded-[10px] px-3 py-2 font-thin ${
+              className={`transition-all  text-black rounded-[10px] px-3 py-2 font-thin Homa ${
                 commentPage === "mot" ? " text-white bg-[#2EB2FF]" : "bg-white"
               }`}
             >
@@ -30,14 +30,14 @@ const Job = () => {
             </button>
             <button
               onClick={() => setCommentPage("khad")}
-              className={` transition-all  text-black rounded-[10px] px-3 py-2 font-thin ${
+              className={` transition-all  text-black rounded-[10px] px-3 py-2 font-thin Homa ${
                 commentPage === "khad" ? " text-white bg-[#2EB2FF]" : "bg-white"
               }`}
             >
               نیروی خدماتی
             </button>
             <button
-              className={` transition-all bg-white text-red-400 rounded-[10px] px-3 py-2 font-thin `}
+              className={` transition-all bg-white text-red-400 rounded-[10px] px-3 py-2 font-thin Homa `}
             >
               جستجو در فرصت های شغلی
             </button>

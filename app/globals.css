@@ -4,6 +4,7 @@
 
 @import "../public/fonts/Shabnam/shabnam.css";
 @import "../public/fonts/YekanBakh/yekanbakh.css";
+@import "../public//fonts//Homa//homa.css";
 * {
   font-family: Shabnam !important;
 }
@@ -14,6 +15,9 @@ body {
 }
 .yekanBakh {
   font-family: YekanBakh !important;
+}
+.Homa {
+  font-family: Homa !important;
 }
 .container_main {
   min-height: 100vh;
