@@ -1,5 +1,6 @@
 "use client";
 import BoxTop from "@/components/BoxTop";
+import Comments from "@/components/Comments";
 import Productone from "@/components/Productone";
 
 const page = ({ params }) => {
@@ -17,6 +18,7 @@ const page = ({ params }) => {
         <BoxTop />
       </div>
       <Productone paramss={params} />
+      <Comments />
     </div>
   );
 };

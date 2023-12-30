@@ -32,8 +32,8 @@ const Cart = () => {
             {selectedProducts.map((product) => (
               <div key={product.id} className="  border-b-2 p-1">
                 <div className="flex items-start gap-2 p-5">
-                  <div className="w-[220px] h-[300px] ml-5">
-                    <Image src={product.img} width={700} height={700} />
+                  <div className="w-[250px] h-[260px] ml-5">
+                    <Image src={product.img} width={800} height={800} />
                   </div>
                   <div className="flex flex-col gap-3">
                     <p className="text-black text-[23.723px] not-italic font-medium leading-[normal]">
@@ -90,12 +90,21 @@ const Cart = () => {
               {totalPrice} تومان
             </p>
           </div>
+          <div className="flex justify-between w-full mt-5">
+            <p className="text-neutral-500 text-center text-base not-italic font-medium leading-6">
+              هزینه ارسال
+            </p>
+            <p className="text-neutral-500 text-center text-base not-italic font-medium leading-6">
+              {selectedProducts.length ? <>40000</> : <>0</>} تومان
+            </p>
+          </div>
+
           <div
             className="w-full bg-[#59AC49] rounded-[8px] mt-5"
             onClick={handlePaymentConfirmation}
           >
             <Link href="#">
-              <p className=" p-2 text-center text-white">پرداخت</p>
+              <p className=" p-2 text-center text-white font-thin">پرداخت</p>
             </Link>
           </div>
         </div>
