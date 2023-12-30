@@ -6,6 +6,7 @@ import Mark from "./Mark";
 import Link from "next/link";
 import { useCart } from "@/provider/cart";
 import BackSlider from "./SwiperPor";
+import Shegefti from "./Shegefti";
 
 const productsData = [
   {
@@ -226,6 +227,8 @@ const App = () => {
       <SwiperSlideShop />
       <Mark />
       <BackSlider products={productsData.slice(0, 3)} />
+      <Shegefti />
+      
       {/* پر فروش ترین */}
       <div className="container m-auto flex items-start justify-between p-10 ">
         <div className=" grid grid-cols-3 gap-10" id="productsSection">
@@ -401,7 +404,7 @@ const App = () => {
               </div>
             </div>
           </label>
-        
+
           <label>
             <input
               type="checkbox"
