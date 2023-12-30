@@ -33,12 +33,15 @@ const Modal2 = ({ isOpen, onClose, title }) => {
                   فرم درخواست {title}
                   <div className="flex flex-col items-start  w-full p-5">
                     <label htmlFor="name" className="flex flex-col items-start">
-                      <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal]">
+                      <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal] flex ">
                         نام و نام خوانوادگی
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+  <path d="M5.34349 0.0458984L6.35505 3.59043L9.93048 2.6942L7.36661 5.34251L9.93048 7.99081L6.35505 7.09459L5.34349 10.6391L4.33192 7.09459L0.756486 7.99081L3.32036 5.34251L0.756486 2.6942L4.33192 3.59043L5.34349 0.0458984Z" fill="#FF3B3B"/>
+</svg>
                       </p>
                       <input
                         type="text"
-                        className="px-5 py-2 rounded border border-[#7A7A7A] w-[286.017px]"
+                        className="px-5 py-2 rounded border border-[#AEAEAE] w-[286.017px]"
                       />
                     </label>
                     <div className="flex items-center gap-5">
@@ -46,37 +49,44 @@ const Modal2 = ({ isOpen, onClose, title }) => {
                         htmlFor="name"
                         className="flex flex-col items-start "
                       >
-                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal]">
+                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal]">
                           آدرس ایمیل
                         </p>
                         <input
                           type="text"
-                          className="px-5 py-2 rounded border border-[#7A7A7A] w-[286.017px]"
+                          className="px-5 py-2 rounded border border-[#AEAEAE] w-[286.017px]"
                         />
                       </label>
                       <label
                         htmlFor="name"
                         className="flex flex-col items-start"
                       >
-                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal]">
+                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal] flex">
                           تلفن تماس
+                          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+  <path d="M5.34349 0.0458984L6.35505 3.59043L9.93048 2.6942L7.36661 5.34251L9.93048 7.99081L6.35505 7.09459L5.34349 10.6391L4.33192 7.09459L0.756486 7.99081L3.32036 5.34251L0.756486 2.6942L4.33192 3.59043L5.34349 0.0458984Z" fill="#FF3B3B"/>
+</svg>
                         </p>
                         <input
                           type="text"
-                          className="px-5 py-2 rounded border border-[#7A7A7A] w-[286.017px]"
+                          className="px-5 py-2 rounded border border-[#AEAEAE] w-[286.017px]"
                         />
                       </label>
                     </div>
 
                     <div className="flex items-center gap-5 mt-5 ">
                       <div className="flex flex-col items-start  ">
-                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal]">
+                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal] flex">
+                          
                           فایل رزومه
+                          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="11" viewBox="0 0 10 11" fill="none">
+  <path d="M5.34349 0.0458984L6.35505 3.59043L9.93048 2.6942L7.36661 5.34251L9.93048 7.99081L6.35505 7.09459L5.34349 10.6391L4.33192 7.09459L0.756486 7.99081L3.32036 5.34251L0.756486 2.6942L4.33192 3.59043L5.34349 0.0458984Z" fill="#FF3B3B"/>
+</svg>
                         </p>
 
                         <div className=" p-2 flex items-center gap-2 border w-[286.017px]">
                           <div className="">
-                            <p className="text-[#999] text-right text-[13.62px] not-italic font-normal leading-[normal] ">
+                            <p className="text-[#999] text-right text-[13.62px] not-italic font-thin leading-[normal] ">
                               فایل رزومه باید یکی از فرمت‌های JPG ،DOCX ،DOC
                               ،PDF و یا PNG باشد.
                             </p>
@@ -111,12 +121,12 @@ const Modal2 = ({ isOpen, onClose, title }) => {
                         </div>
                       </div>
                       <div className="flex flex-col items-start">
-                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal] ">
+                        <p className="py-2 text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal] ">
                           عکس شما
                         </p>
                         <div className="border p-2 flex items-center gap-2 w-[286.017px]">
                           <div className="">
-                            <p className="text-[#999] text-right text-[13.62px] not-italic font-normal leading-[normal] ">
+                            <p className="text-[#999] text-right text-[13.62px] not-italic font-thin leading-[normal] ">
                               تصویر باید یکی از فرمت‌های JPG ،PNG و یا JPEG
                               باشد.
                             </p>
@@ -154,7 +164,7 @@ const Modal2 = ({ isOpen, onClose, title }) => {
                     <div className="flex flex-col items-start gap-5">
                       <label
                         htmlFor="myTextArea"
-                        className="text-[#7A7A7A] text-[13.62px] not-italic font-medium leading-[normal] mt-5"
+                        className="text-[#7A7A7A] text-[13.62px] not-italic font-thin leading-[normal] mt-5"
                       >
                         توضیحات تکمیلی ( درصورت نیاز)
                       </label>
