@@ -37,7 +37,7 @@ export default function App() {
             src="/img/r3.png"
             width="400"
             height="250"
-            className="rounded-xl"
+            className="rounded-xl max-h-[260px]"
           />
         </a>
         <a data-fancybox="gallery" href="/img/r4.png">

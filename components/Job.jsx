@@ -8,7 +8,7 @@ const Job = () => {
 
   return (
     <>
-      <div className="bg-[#ECECEC] w-full items-center shadow-lg flex m-auto justify-center gap-32  p-10 rounded-[100px]">
+      <div className="bg-[#ECECEC] w-full items-center shadow-lg flex m-auto justify-center gap-32  p-10 rounded-[60px]">
         <div className="flex flex-col gap-10">
           <p className="text-black text-[25px] not-italic font-normal leading-[normal]">
             اشتیاق خود را به <span className="text-[#F40B0B]">شغل</span> خود
