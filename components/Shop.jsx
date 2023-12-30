@@ -385,21 +385,43 @@ const App = () => {
           <label>
             <input
               type="checkbox"
-              checked={selectedType === "shirts"}
-              onChange={() => handleCheckboxChange("type", "shirts")}
+              checked={selectedType === "s"}
+              onChange={() => handleCheckboxChange("type", "s")}
               className={`hidden ${
-                selectedType === "shirts" ? "checked:bg-[#C5E3FF]" : ""
+                selectedType === "s" ? "checked:bg-[#C5E3FF]" : ""
               }`}
             />
             <div
               className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
-                selectedType === "shirts" ? "bg-[#C5E3FF]" : "bg-gray-200"
+                selectedType === "s" ? "bg-[#C5E3FF]" : "bg-gray-200"
               }`}
             >
               <div className="flex items-center justify-between">
                 <p>شلوارک</p>
                 <div>
                   <img src="/img/shorts_10529680.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedType === "sd"}
+              onChange={() => handleCheckboxChange("type", "sd")}
+              className={`hidden ${
+                selectedType === "sd" ? "checked:bg-[#C5E3FF]" : ""
+              }`}
+            />
+            <div
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "sd" ? "bg-[#C5E3FF]" : "bg-gray-200"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <p>تی شرت و شلوارک</p>
+                <div>
+                  <img src="/img/soccer-equipment_5667162 1.png" alt="" />
                 </div>
               </div>
             </div>
@@ -423,6 +445,50 @@ const App = () => {
                 <p>جوراب </p>
                 <div>
                   <img src="/img/ff.svg" alt="" />
+                </div>
+              </div>
+            </div>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedType === "jord"}
+              onChange={() => handleCheckboxChange("type", "jord")}
+              className={`hidden ${
+                selectedType === "jord" ? "checked:bg-[#C5E3FF]" : ""
+              }`}
+            />
+            <div
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "jord" ? "bg-[#C5E3FF]" : "bg-gray-200"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <p>تاپ</p>
+                <div>
+                  <img src="/img/sports_10593905.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              checked={selectedType === "jorddd"}
+              onChange={() => handleCheckboxChange("type", "jorddd")}
+              className={`hidden ${
+                selectedType === "jorddd" ? "checked:bg-[#C5E3FF]" : ""
+              }`}
+            />
+            <div
+              className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
+                selectedType === "jorddd" ? "bg-[#C5E3FF]" : "bg-gray-200"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <p>لباس شنا</p>
+                <div>
+                  <img src="/img/suit_10270980.png" alt="" />
                 </div>
               </div>
             </div>

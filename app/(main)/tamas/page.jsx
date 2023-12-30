@@ -199,7 +199,7 @@ const page = () => {
               />
             </div>
             <div className="w-full flex justify-end items-center">
-              <button className="bg-[#DED60E] hover:shadow-lg transition-all w-fit px-10 py-2 lg:px-20 lg:py-2 lg:text-[20px] lg:font-medium rounded-[5px] mt-5">
+              <button className="bg-[#59AC49] hover:shadow-lg transition-all w-fit px-10 py-2 lg:px-20 lg:py-2 lg:text-[20px] lg:font-medium rounded-[5px] mt-5">
                 ثبت نام
               </button>
             </div>
