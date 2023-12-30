@@ -1,4 +1,5 @@
 "use client";
+import AddCom from "@/components/AddCom";
 import BoxTop from "@/components/BoxTop";
 import Comments from "@/components/Comments";
 import Productone from "@/components/Productone";
@@ -19,6 +20,7 @@ const page = ({ params }) => {
       </div>
       <Productone paramss={params} />
       <Comments />
+      <AddCom />
     </div>
   );
 };
