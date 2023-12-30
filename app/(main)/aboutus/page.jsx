@@ -41,7 +41,7 @@ const page = () => {
         </p>
         <div className="w-full flex gap-8 mb-10">
           <div className="w-[510px]">
-            <p className="text-[#5B5B5B] text-justify text-[20px] not-italic font-thin leading-loose">
+            <p className="text-[#5B5B5B] text-justify text-[20px] not-italic font-thin leading-loose ">
               در مجموعه ورزشی ما، به ارائه محتوای تازه و تخصصی در زمینه‌های
               ورزشی، تناسب اندام و تغذیه متمرکز هستیم. هدف ما ایجاد یک جامعه
               پویا از علاقه‌مندان به ورزش است که تجربیات و ایده‌هایشان را با هم
