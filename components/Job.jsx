@@ -48,7 +48,7 @@ const Job = () => {
             <img
               src="/img/mna.png"
               alt=""
-              className="absolute h-[362.935px] w-[808px] -top-20 object-cover"
+              className="absolute h-[362.935px] w-[808px] -top-10 object-cover"
             />
           </div>
           <img src="/img/innn.png" alt="" />
