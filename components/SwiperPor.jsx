@@ -6,10 +6,12 @@ import "swiper/swiper-bundle.css";
 const BackSlider = ({ products }) => {
   return (
     <>
-    <p>پر فروش ترین ها</p>
-      <div className="flex container m-auto gap-20 items-center justify-center mt-5">
+      <p className="w-full text-center my-10 text-black  text-[25px] not-italic font-bold leading-[14.984px] tracking-[0.6px]">
+        پر فروش ترین ها
+      </p>
+      <div className="flex container m-auto gap-20 items-center justify-center my-10">
         {products.map((product) => (
-          <Link href={product.link}>
+          <Link href={product.link} key={product.id}>
             <div className="relative">
               {product.per ? (
                 <>
