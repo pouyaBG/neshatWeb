@@ -53,8 +53,8 @@ const page = () => {
               هدایت کنیم.
             </p>
           </div>
-          <div className="  ">
-            <img src="/img/tn.png" className="object-contain rounded-[30px] border-[3px]  border-[#DED60E]" />
+          <div className="h-[369px] ">
+            <img src="/img/tn.png" className="object-cover rounded-[30px] w-[553px] border-[3px] h-[299px]  border-[#DED60E]" />
           </div>
         </div>
       </div>
