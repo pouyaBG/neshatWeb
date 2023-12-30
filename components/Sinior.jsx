@@ -72,7 +72,7 @@ const Sinior = () => {
             <p>{item.title}</p>
             {item.is ? (
               <>
-                <div className="bg-[#E2E2E2] flex items-center gap-2 p-2 rounded-[10px]">
+                <div className="bg-[#E2E2E2] flex items-center gap-2 px-2 py-1 rounded-[10px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="14"
@@ -89,7 +89,7 @@ const Sinior = () => {
                     {item.is}
                   </p>
                 </div>
-                <div className="bg-[#E2E2E2] flex items-center gap-2 p-2 rounded-[10px]">
+                <div className="bg-[#E2E2E2] flex items-center gap-2 px-2 py-1 rounded-[10px]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="14"
