@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal2 from "./Modal2";
 
 const Joineor = () => {
   const dataList = [
@@ -23,11 +24,22 @@ const Joineor = () => {
         "تعمیرات ساده و نگهداری از تجهیزات فنی مانند آسانسورها و سیستم‌های گرمایشی و سرمایشی.",
     },
   ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({});
+  const openModal = (title, content) => {
+    setModalContent({ title, content });
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <div className="grid grid-cols-2 gap-x-14 gap-y-8">
       {dataList.map((item, id) => (
         <div
           key={id}
+          onClick={() => openModal(item.title, item.item1)}
           className="border cursor-pointer rounded-[10px] hover:shadow-xl transition-all hover:scale-105 bg-white shadow-md p-5 border-solid border-[rgba(0,0,0,0.20)] flex flex-col items-start gap-2"
         >
           <div className="flex items-center gap-5">
@@ -85,6 +97,11 @@ const Joineor = () => {
           ) : (
             ""
           )}
+          <Modal2
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title={modalContent.title}
+          />
         </div>
       ))}
     </div>

@@ -5,6 +5,7 @@ import SwiperSlideShop from "./SwiperSlideShop";
 import Mark from "./Mark";
 import Link from "next/link";
 import { useCart } from "@/provider/cart";
+import BackSlider from "./SwiperPor";
 
 const productsData = [
   {
@@ -224,6 +225,8 @@ const App = () => {
       </div>
       <SwiperSlideShop />
       <Mark />
+      <BackSlider products={productsData.slice(0, 3)} />
+      {/* پر فروش ترین */}
       <div className="container m-auto flex items-start justify-between p-10 ">
         <div className=" grid grid-cols-3 gap-10" id="productsSection">
           {filteredProducts.length > 0 ? (
@@ -352,6 +355,7 @@ const App = () => {
               </div>
             </div>
           </label>
+
           <label>
             <input
               type="checkbox"
@@ -374,29 +378,30 @@ const App = () => {
               </div>
             </div>
           </label>
+
           <label>
             <input
               type="checkbox"
-              checked={selectedType === "shal"}
-              onChange={() => handleCheckboxChange("type", "shal")}
+              checked={selectedType === "shirts"}
+              onChange={() => handleCheckboxChange("type", "shirts")}
               className={`hidden ${
-                selectedType === "shal" ? "checked:bg-[#C5E3FF]" : ""
+                selectedType === "shirts" ? "checked:bg-[#C5E3FF]" : ""
               }`}
             />
             <div
               className={`cursor-pointer  w-[250px]  p-3 rounded-md ${
-                selectedType === "shal" ? "bg-[#C5E3FF]" : "bg-gray-200"
+                selectedType === "shirts" ? "bg-[#C5E3FF]" : "bg-gray-200"
               }`}
             >
               <div className="flex items-center justify-between">
-                <p>شلوارک </p>
+                <p>شلوارک</p>
                 <div>
-                  <img src="/img/ss.svg" alt="" />
+                  <img src="/img/shorts_10529680.png" alt="" />
                 </div>
               </div>
-              ‍
             </div>
           </label>
+        
           <label>
             <input
               type="checkbox"
