@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Modal2 from "./Modal2";
+import Modal3 from "./Modal3";
 
 const Joineor = () => {
   const dataList = [
@@ -26,6 +26,7 @@ const Joineor = () => {
   ];
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({});
+  
   const openModal = (title, content) => {
     setModalContent({ title, content });
     setIsModalOpen(true);
@@ -97,13 +98,13 @@ const Joineor = () => {
           ) : (
             ""
           )}
-          <Modal2
-            isOpen={isModalOpen}
-            onClose={closeModal}
-            title={modalContent.title}
-          />
         </div>
       ))}
+      <Modal3
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        title={modalContent.title}
+      />
     </div>
   );
 };
