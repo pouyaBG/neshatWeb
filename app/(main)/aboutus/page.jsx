@@ -4,10 +4,10 @@ import React from "react";
 const page = () => {
   return (
     <div className="flex  flex-col items-center m-auto  justify-center container yekanBakh ">
-      <p className="text-black w-[70%] text-center mt-10 text-[40px] not-italic font-bold leading-[normal]">
+      <p className="text-black w-[70%] text-center mt-10 text-[40px] not-italic font-bold leading-[normal] mb-2">
         درباره مجموعه ما
       </p>
-      <div className=" my-5 w-[70%]">
+      <div className=" my-5 mb-9 w-[70%]">
         <p className="text-[#5B5B5B] text-center text-xl not-italic font-thin leading-[normal]">
           خوش آمدید به وبسایت مجموعه ورزشی ما! با افتخار به شما ارائه می‌دهیم
           که در آن می‌توانید از جدیدترین اخبار ورزشی، آموزش‌های تخصصی، و
@@ -15,7 +15,7 @@ const page = () => {
           به فرد ما بپیوندید!
         </p>
       </div>
-      <div className="w-[70%]">
+      <div className="w-[70%] mt-5">
         <div className="w-full  flex gap-10 m-auto mr-10">
           <div className=" w-[40%]  max-h-[500px]  rounded-[37.611px] ">
             <img

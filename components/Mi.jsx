@@ -22,7 +22,7 @@ const Mi = () => {
         <div className=" p-10  ">
           <div className="m-auto flex flex-col lg:flex-row lg:gap-20 gap-10  rounded-[7.004px]  w-fit  py-5 px-20 items-center justify-center ">
             <div className="flex flex-col items-center gap-2  lg:pl-10   pb-10 lg:pb-5">
-              <div className="text-white flex flex-col items-center mt-2">
+              <div className="text-white flex flex-col items-center mt-2 ml-6">
                 {startCounting && (
                   <div className=" text-[color:var(--base-100,#2C3131)] text-right text-[33.621px] not-italic flex items-center font-normal leading-[125%]">
                     <CountUp end={300} duration={2} />
