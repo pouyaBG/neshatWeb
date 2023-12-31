@@ -10,12 +10,12 @@ const AddCom = () => {
       </div>
       <div>
         <p className="font-thin my-2">ایمیل خود را وارد کنید</p>
-        <input type="text" className="w-[850px] p-3 rounded-[14px] shadow-md" />
+        <input type="text" className="w-[850px] p-3 outline-none rounded-[10px] shadow-" sm/>
       </div>
       <div>
         <p className="font-thin my-2">متن نظر خود را اینجا بنویسید</p>
         <textarea
-          className=" rounded-[14px] w-[850px] p-3  shadow-md    outline-none "
+          className=" rounded-[10px] w-[850px] p-3  shadow-sm    outline-none "
           id="myTextArea"
           rows={10} // You can adjust the number of rows as needed
           cols={59}
